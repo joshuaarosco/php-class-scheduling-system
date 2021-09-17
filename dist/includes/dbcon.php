@@ -1,11 +1,12 @@
-
 <?php
-$con = mysqli_connect("localhost","root","","scheduling");
+$con = mysqli_connect("localhost","root","dev123","scheduling");
 
 // Check connection
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }else{
+    //echo "successfully connected";
   }
 ?>
 

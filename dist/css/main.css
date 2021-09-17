@@ -1,0 +1,160 @@
+.border-1{
+	border:  1px solid black;
+	border-radius: 0px;
+	box-shadow: none;
+}
+.border-0{
+	border:  0px solid black;
+	border-radius: 0px;
+	box-shadow: none;
+}
+.input{
+	background: #efefef;
+}
+.btn-primary{
+    border-color: #3c8dbc;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary.hover {
+    background-color: #2db8eb;
+    border-color: #2db8eb;
+}
+.img-logo{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+  	bottom: 0;
+  	right: 0;
+  	margin-right: 25px;
+  	margin-bottom: 25px;
+}
+.skin-yellow .main-header .navbar{
+	background-color: #ffffff;
+	color: #000000;
+}
+.container{
+	width: 100%;
+}
+.ml-5{
+	margin-left: 5px;
+}
+.ml-10{
+	margin-left: 10px;
+}
+.ml-15{
+	margin-left: 15px;
+}
+.mt-5{
+	margin-top: 5px;
+}
+.mt-13{
+	margin-top: 13px;
+}
+.mt-25{
+	margin-top: 25px;
+}
+.mr-5{
+	margin-right: 5px;
+}
+.mr-10{
+	margin-right: 10px;
+}
+.content-wrapper{
+	background-color: #ffffff;
+}
+.home-container{
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.input-has-feedback{
+	padding-left: 25px;
+}
+.left-0{
+	left: 0!important;
+}
+.w-100{
+	width: 100%;
+}
+.log {
+	resize: none;
+	color: #52c352;
+	padding: 10px;
+}
+.pr-0{
+	padding-right: 0px;
+}
+.pt-0{
+	padding-top: 10px;
+}
+.btn-link{
+	background-color: #efefef;
+	color: #000000;
+}
+.btn-link:hover{
+	background-color: #efefef;
+	text-decoration: none;
+}
+.p-2{
+	padding: 2px;
+}
+.p-5{
+	padding: 5px;
+}
+.p-10{
+	padding: 10px;
+}
+.navi{
+	border: 1px solid black;
+	display: inline-block;
+}
+.section-title{
+	font-size: 24px;
+}
+.custom-table > thead > tr > th, .custom-table > tbody > tr > td{
+	padding: 5px;
+	text-align: center;
+	border: 1px solid #000000;
+}
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { 
+	border-radius: 20px;
+	background-color: #ffffff;
+}
+.toggle.ios .toggle-handle { 
+	border-radius: 50%;
+    height: 14px!important;
+    top: -3px;
+    right: 9px;
+    padding: 8px; 
+    background: #52c352;
+    border: none;
+}
+.toggle-group label{
+	display: none;
+}
+.toggle, .toggle:hover{
+	border: 1px solid #000000;
+}
+.toggle.btn{
+	min-width: 22px;
+    min-height: 15px;
+    width: 30px!important;
+    height: 18px!important;
+}
+.off .toggle-group .toggle-handle{
+    height: 14px!important;
+    top: -3px;
+    right: -9px;
+    padding: 8px;
+    background: #000000;
+    border: none;
+}
+.img-user{
+	width: 150px;
+	height: 150px;
+}
+.float-right{
+	float: right;
+	margin-right: 35px;
+}

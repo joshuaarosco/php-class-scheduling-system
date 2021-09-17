@@ -37,7 +37,6 @@
                     <!-- Menu Toggle Button -->
                     <a href="logout.php" class="dropdown-toggle">
                       <i class="glyphicon glyphicon-off text-red"></i> 
-                      
                     </a>
                   </li>
                   

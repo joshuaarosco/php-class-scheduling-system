@@ -38,6 +38,7 @@ $query=mysqli_query($con,"select * from member where username='$user' and passwo
 	  	$_SESSION['id']=$id;	
 	  	$_SESSION['name']=$name;	
 	  	$_SESSION['type']=$status;	
+	  	$_SESSION['logs']='';	
 	  		
 		  	if ($status=='admin')
 		  		{
