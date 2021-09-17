@@ -4,13 +4,13 @@ header('Location:../index.php');
 endif;
 include('../dist/includes/dbcon.php');
 
-	$start_time =$_POST['start_time'];
-	$end_time =$_POST['end_time'];
-	$day =$_POST['day'];
-	$member_id =$_POST['teacher'];
-	$subject_code =$_POST['subject'];
-	$cys =$_POST['cys'];
-	$room =$_POST['room'];
+	$start_time = $_POST['start_time'];
+	$end_time = $_POST['end_time'];
+	$day = $_POST['day'];
+	$member_id = $_POST['teacher'];
+	$subject_code = $_POST['subject'];
+	$cys = $_POST['cys'];
+	$room = $_POST['room'];
 	$settings_id = $_SESSION['settings'];
 	$encoded_by = $_SESSION['id'];
 

@@ -55,12 +55,12 @@ endif;?>
                 <span class="section-title"><?php echo $row['member_rank']?></span><br>
                 <span><?php echo $row['member_salut']?> <?php echo $row['member_first']?> <?php echo $row['member_last']?></span>
               </div>
-              <div class="box-header">
+              <div class="box-header pl-25">
                 <span class="section-title">Update Account Details:</span>
               </div>
-              <div class="box-body">
+              <div class="box-body p-25">
                 <!-- Date range -->
-                <form method="post" action="profile_update.php">
+                <form method="post" action="../logic/profile_update.php">
                   <div class="form-group">
                     <div class="row">
                       <div class="col-md-3">
@@ -122,11 +122,13 @@ endif;?>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-1 pr-0">
-                      <button class="btn btn-primary btn-block btn-flat">Save</button>
+                    <div class="col-md-3">
                     </div>
-                    <div class="col-xs-1 pr-0">
-                      <button class="btn btn-block btn-flat" type="reset">Clear</button>
+                    <div class="col-md-3">
+                      <div class="btn-group w-100" role="group" aria-label="First group">
+                        <button class="btn w-50 btn-secondary btn-primary btn-flat">Save</button>
+                        <button class="btn w-50 btn-secondary btn-flat" type="reset">Clear</button>
+                      </div>
                     </div>
                   </div>
                 </form>	

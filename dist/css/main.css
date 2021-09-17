@@ -58,6 +58,12 @@
 .mr-10{
 	margin-right: 10px;
 }
+.mr-30{
+	margin-right: 30px;
+}
+.mr-50{
+	margin-right: 50px;
+}
 .content-wrapper{
 	background-color: #ffffff;
 }
@@ -74,8 +80,14 @@
 .left-0{
 	left: 0!important;
 }
+.w-250px{
+	width: 250px;
+}
 .w-100{
 	width: 100%;
+}
+.w-50{
+	width: 50%;
 }
 .log {
 	resize: none;
@@ -87,6 +99,12 @@
 }
 .pt-0{
 	padding-top: 10px;
+}
+.p-25{
+	padding: 25px;
+}
+.pl-25{
+	padding-left: 25px;
 }
 .btn-link{
 	background-color: #efefef;

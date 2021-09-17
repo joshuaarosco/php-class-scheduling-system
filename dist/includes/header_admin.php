@@ -1,8 +1,8 @@
 <header class="main-header">
   <nav class="navbar navbar-static-top">
     <div class="container">
-      <div class="navbar-header" style="padding-left:20px">
-
+      <div class="navbar-header mt-25" style="padding-left:20px">
+        <a href="home.php" class="section-title text-black"><?php include('../dist/includes/title.php');?></a>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <i class="fa fa-bars"></i>
         </button>
@@ -116,6 +116,52 @@
           <li class="mt-13">
             <span>|</span>
           </li>
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggl text-blacke" data-toggle="dropdown">
+              <i class="glyphicon glyphicon-wrench text-black"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <ul class="menu">
+                  <li>
+                    <a href="department.php">
+                      <i class="glyphicon glyphicon-briefcase text-black"></i> Department
+                    </a>
+                  </li>
+                  <li>
+                    <a href="designation.php">
+                      <i class="glyphicon glyphicon-pushpin text-black"></i> Designation
+                    </a>
+                  </li>
+                  <li>
+                    <a href="program.php">
+                      <i class="glyphicon glyphicon-flag text-black"></i> Program
+                    </a>
+                  </li>
+                  <li>
+                    <a href="rank.php">
+                      <i class="glyphicon glyphicon-star text-black"></i> Rank
+                    </a>
+                  </li>
+                  <li>
+                    <a href="salut.php">
+                      <i class="glyphicon glyphicon-certificate text-black"></i> Salutation
+                    </a>
+                  </li>
+                  <li>
+                    <a href="sy.php">
+                      <i class="glyphicon glyphicon-calendar text-black"></i> School Year
+                    </a>
+                  </li>
+                  <!-- <li>
+                    <a href="time.php">
+                      <i class="glyphicon glyphicon-calendar text-black"></i> Time
+                    </a>
+                  </li> -->
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="">
             <a href="settings.php" style="color:#fff;" class="dropdown-toggle">
               <i class="glyphicon glyphicon-cog text-black"></i>
@@ -127,7 +173,7 @@
             </a>
           </li>
         </ul>
-      </div><!-- /.navbar-custom-menu -->
-    </div><!-- /.container-fluid -->
+      </div>
+    </div>
   </nav>
 </header>

@@ -26,7 +26,7 @@
                     </a>
                   </li>
                  
-				  <li class="">
+				          <li class="">
                     <!-- Menu Toggle Button -->
                     <a href="profile.php" class="dropdown-toggle">
                       <i class="glyphicon glyphicon-user text-orange"></i>

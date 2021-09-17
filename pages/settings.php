@@ -142,14 +142,12 @@ error_reporting(0);
                         <option>Endterm</option>
                       </select>
                     </div><!-- /.form group -->
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-xs-6 pr-0">
-                          <button class="btn btn-block btn-primary btn-flat" name="save" type="submit">Save</button>
-                        </div>
-                        <div class="col-xs-6">
-                          <button class="btn btn-block btn-flat" type="reset">Cancel</button>
-                        </div>
+                    <div class="row">
+                      <div class="col-xs-6 pr-0">
+                        <button class="btn btn-block btn-primary btn-flat" name="save" type="submit">Save</button>
+                      </div>
+                      <div class="col-xs-6">
+                        <button class="btn btn-block btn-flat" type="reset">Cancel</button>
                       </div>
                     </div>
                   </form>
