@@ -40,6 +40,11 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 		      	$start_time =  $row['start_time']?:'00:00';
 		      	$end_time =  $row['end_time']?:'01:00';
 
+		      	$member_id = $row['member_id'];
+
+		      	$selectMember = mysqli_query($con,"SELECT * FROM member WHERE member_id = '$member_id' ") or die(mysqli_error($con));
+		      	$member = mysqli_fetch_array($selectMember);
+
 
 		      	$day = 0;
 		      	switch ($row['day']) {
@@ -66,10 +71,10 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 		        {
 		          daysOfWeek: [<?php echo $day;?>],
 		          //groupId: <?php echo $row['room']; ?>,
-		          title: 'Class <?php echo $row['cys']; ?> studying <?php echo $row['subject_code']; ?> @ Room <?php echo $row['room']; ?>',
+		          title: 'Teacher: <?php echo $member['member_first'].' '.$member['member_last']; ?>; Class: <?php echo $row['cys']; ?>; Subject: <?php echo $row['subject_code']; ?>; Room: <?php echo $row['room']; ?>',
 		          startTime: '<?php  echo $start_time;?>',
 		          endTime: '<?php  echo $end_time;?>',
-		          description: 'Class <?php echo $row['cys']; ?> studying <?php echo $row['subject_code']; ?> @ Room <?php echo $row['room']; ?>',
+		          url: 'sched_edit.php?id=<?php echo $row['sched_id']?>',
 		        },
 		       <?php } ?>
 		      ]
@@ -246,7 +251,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
     													<button type="submit" class="btn btn-primary btn-block btn-flat">Save</button>
     												</div><!-- /.col -->
     												<div class="col-xs-6">
-    													<button type="reset" class="btn btn-block btn-flat">Uncheck All</button>
+    													<button type="reset" class="btn btn-block btn-flat">Cancel</button>
     												</div><!-- /.col -->
     											</div>
     										</div><!-- /.form group -->

@@ -1,7 +1,7 @@
 <?php 
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);  
 
-$dahboard = ['home.php', 'settings.php', 'profile.php'];
+$dahboard = ['home.php', 'settings.php', 'profile.php', 'sched_edit.php'];
 $entry = ['class.php', 'room.php', 'subject.php', 'teacher.php', 'teacher_edit.php', 'signatories.php'];
 $display = [];
 $maintenance = [];
