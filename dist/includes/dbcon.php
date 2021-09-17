@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","dev123","scheduling");
+$con = mysqli_connect("localhost","root","","scheduling");
 
 // Check connection
 if (mysqli_connect_errno())
