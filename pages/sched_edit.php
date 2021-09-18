@@ -72,6 +72,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 		      	}
 		      	?>
 		      	{
+
 		      		daysOfWeek: [<?php echo $day;?>],
 		          //groupId: <?php echo $row['room']; ?>,
 		          title: 'Teacher: <?php echo $member['member_first'].' '.$member['member_last']; ?>; Class: <?php echo $row['cys']; ?>; Subject: <?php echo $row['subject_code']; ?>; Room: <?php echo $row['room']; ?>',
@@ -80,7 +81,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 		          url: 'sched_edit.php?id=<?php echo $row['sched_id']?>',
 		        },
 		      <?php } ?>
-		      ]
+		      ],
 		    });
 
 			calendar.render();
@@ -186,7 +187,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 													<span class="ml-5">Add Day</span>
 													<div class="form-group has-feedback">
 														<select class="form-control input" name="day" required>
-															<option><?php echo $day;?></option>
+															<option value="<?php echo $row['day'];?>" selected><?php echo $day;?></option>
 															<option value="m">Monday</option>
 															<option value="t">Tuesday</option>
 															<option value="w">Wednesday</option>
@@ -251,7 +252,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 											</div>	
 											<div class="row">
 												<div class="col-xs-6 pr-0">
-													<button type="submit" class="btn btn-primary btn-block btn-flat">Save</button>
+													<button type="submit" class="btn btn-primary btn-block btn-flat">Update</button>
 												</div><!-- /.col -->
 												<div class="col-xs-6">
 													<a href="home.php" class="btn btn-block btn-flat btn-link">Cancel</a>

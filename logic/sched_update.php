@@ -25,7 +25,8 @@ include('../dist/includes/dbcon.php');
 
 	//check room availability
 	$query = mysqli_query($con,"SELECT * FROM schedule 
-		WHERE room = '$room' 
+		WHERE sched_id != '$sched_id' 
+		AND room = '$room' 
 		AND day='$day'") or die(mysqli_error($con));
 
 	while($row = mysqli_fetch_array($query)){
@@ -41,7 +42,8 @@ include('../dist/includes/dbcon.php');
 
 	//check member/teacher availability
 	$query2 = mysqli_query($con,"SELECT * FROM schedule 
-		WHERE member_id = '$member_id'
+		WHERE sched_id != '$sched_id' 
+		AND member_id = '$member_id'
 		AND day='$day'") or die(mysqli_error($con));
 
 	while($row = mysqli_fetch_array($query2)){
@@ -57,7 +59,8 @@ include('../dist/includes/dbcon.php');
 
 	//check class availability
 	$query3 = mysqli_query($con,"SELECT * FROM schedule 
-		WHERE cys = '$cys'
+		WHERE sched_id != '$sched_id' 
+		AND cys = '$cys'
 		AND day='$day'") or die(mysqli_error($con));
 
 	while($row = mysqli_fetch_array($query3)){

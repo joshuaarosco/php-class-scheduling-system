@@ -3,7 +3,8 @@ if(empty($_SESSION['id'])):
 	header('Location:../index.php');
 endif;
 include('../dist/includes/dbcon.php');
-$query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error($con));
+$settings_id = $_SESSION['settings'];
+$query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$settings_id'") or die(mysqli_error($con));
 ?>
 <!DOCTYPE html>
 <html>

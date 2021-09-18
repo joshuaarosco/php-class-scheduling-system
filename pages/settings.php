@@ -74,17 +74,18 @@ error_reporting(0);
                     <td><?php echo $sy;?></td>  
                     <td><?php echo ucwords($status);?></td>   
                     <td>
-                      <a id="removeme" class="p-2 text-black" href="activate.php?id=<?php echo $id;?>">
-                        <span class="mr-5">Set</span> <input type="checkbox" checked data-toggle="toggle" data-style="ios">
+                      <a id="removeme" class="text-black mr-5" href="../logic/activate.php?id=<?php echo $id;?>">
+                        <span class="mr-5">Set</span> 
+                        <input type="checkbox" <?php echo $status=='active'?'checked':'';?> class="switch_1" value="<?php echo $id;?>">
                       </a>
-                      <a id="removeme" class="p-2 text-black" href="settings_del.php?id=<?php echo $id;?>">
+                      <a id="removeme" class="text-black" href="settings_del.php?id=<?php echo $id;?>">
                         <i class="glyphicon glyphicon-remove-circle mr-5"></i>
                         <span>Delete</span>
                       </a>
-                      <a id="removeme" class="p-2 text-black" href="settings_del.php?id=<?php echo $id;?>">
+                      <!-- <a id="removeme" class="text-black" href="settings_del.php?id=<?php echo $id;?>">
                         <i class="glyphicon glyphicon-download-alt mr-5"></i>
                         <span>Retrieve</span>
-                      </a>
+                      </a> -->
                     </td>
                   </tr>
                 <?php }?>           
@@ -161,8 +162,6 @@ error_reporting(0);
   </div><!-- /.content-wrapper -->
   <?php include('../dist/includes/footer.php');?>
   </div><!-- ./wrapper -->
-
-
   <script type="text/javascript" src="autosum.js"></script>
   <!-- jQuery 2.1.4 -->
   <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -180,9 +179,19 @@ error_reporting(0);
   <script src="../dist/js/demo.js"></script>
   <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
-
   <script>
     $(function () {
+      $('.switch_1').click(function(){
+        let val = $(this).val();
+        if($(this).prop("checked") == true){
+          document.location='../logic/activate.php?id='+val;
+        }else{
+          console.log('unchecked');
+          alert('Unable to deactivate, at least 1 Setting must be active');
+          $(this).prop("checked", true);
+        }
+      });             
+
       $("#example1").DataTable();
       $('#example2').DataTable({
         "paging": true,

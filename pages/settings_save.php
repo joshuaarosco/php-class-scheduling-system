@@ -10,23 +10,21 @@ include('../dist/includes/dbcon.php');
 	$sem = $_POST['sem'];	
 	$sy = $_POST['sy'];		
 	
-			$query=mysqli_query($con,"select * from settings where sem='$sem' and sy='$sy'")or die(mysqli_error($con));
-				 $count=mysqli_num_rows($query);
+	$query=mysqli_query($con,"select * from settings where sem='$sem' and sy='$sy'")or die(mysqli_error($con));
+	$count=mysqli_num_rows($query);
 
-				 if ($count>0)
-				 {
-					echo "<script type='text/javascript'>alert('Settings already added!');</script>";	
-					echo "<script>document.location='settings.php'</script>";  
-				}
-				else
-					{
-					
-					mysqli_query($con,"INSERT INTO settings(sem,sy,status) 
-					VALUES('$sem','$sy','inactive')")or die(mysqli_error($con));
-				
-					echo "<script type='text/javascript'>alert('Successfully added settings!');</script>";	
-					echo "<script>document.location='settings.php'</script>";  
-				}
+	if ($count>0)
+	{
+		echo "<script type='text/javascript'>alert('Settings already added!');</script>";	
+		echo "<script>document.location='settings.php'</script>";  
+	}
+	else
+	{
 
-	
+		mysqli_query($con,"INSERT INTO settings(sem,sy,status) 
+			VALUES('$sem','$sy','inactive')")or die(mysqli_error($con));
+
+		echo "<script type='text/javascript'>alert('Successfully added settings!');</script>";	
+		echo "<script>document.location='settings.php'</script>";  
+	}
 ?>

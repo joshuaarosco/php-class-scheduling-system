@@ -62,13 +62,22 @@ endif;
                     <?php
                     $id=$_SESSION['id'];
                     include('../dist/includes/dbcon.php');
-                    $query=mysqli_query($con,"select * from signatories natural join member natural join designation where set_by='$id' order by seq")or die(mysqli_error());
+                    $query=mysqli_query($con,"select * from signatories where set_by='$id' order by seq")or die(mysqli_error());
 
                     while($row=mysqli_fetch_array($query)){
-                      $sid=$row['sign_id'];
-                      $name=$row['member_first']." ".$row['member_last'];
-                      $designation=$row['designation_name'];
-                      $seq=$row['seq'];
+                      $sid = $row['sign_id'];
+                      $seq = $row['seq'];
+
+                      $member_id = $row['member_id'];
+                      $selMem = mysqli_query($con,"SELECT * FROM member WHERE member_id = '$member_id' LIMIT 1")or die(mysqli_error($con));
+                      $member = mysqli_fetch_array($selMem);
+
+                      $designation_id = $member['designation_id'];
+                      $selDesig = mysqli_query($con,"SELECT * FROM designation WHERE designation_id = '$designation_id' LIMIT 1")or die(mysqli_error($con));
+                      $desig = mysqli_fetch_array($selDesig);
+
+                      $name = $member['member_first']." ".$member['member_last'];
+                      $designation = $desig['designation_name'];
 
                       ?>
                       <tr>
