@@ -2,7 +2,7 @@
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header mt-25" style="padding-left:20px">
-        <a href="home.php" class="section-title text-black"><?php include('../dist/includes/title.php');?></a>
+        <a href="<?php echo $_SESSION['type']=='admin'?'home.php':'faculty_home.php';?>" class="section-title text-black"><?php include('../dist/includes/title.php');?></a>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <i class="fa fa-bars"></i>
         </button>

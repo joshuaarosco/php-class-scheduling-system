@@ -8,31 +8,31 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Home | <?php include('../dist/includes/title.php');?></title>
-		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
-		<link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-		<link rel="stylesheet" href="../plugins/select2/select2.min.css">
-	  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-	  <link rel="stylesheet" href="../dist/css/main.css">
-	  <script src="../dist/js/jquery.min.js"></script>
-	  <link href="../plugins/fullcalendar-scheduler/main.min.css" rel="stylesheet">
-	  <script src="../plugins/fullcalendar-scheduler/main.min.js"></script>
-	  <script>
-	  	document.addEventListener('DOMContentLoaded', function() {
-		    var calendarEl = document.getElementById('calendar');
-		    var calendarE2 = document.getElementById('side-calendar');
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Home | <?php include('../dist/includes/title.php');?></title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="../plugins/select2/select2.min.css">
+	<link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="../dist/css/main.css">
+	<script src="../dist/js/jquery.min.js"></script>
+	<link href="../plugins/fullcalendar-scheduler/main.min.css" rel="stylesheet">
+	<script src="../plugins/fullcalendar-scheduler/main.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var calendarEl = document.getElementById('calendar');
+			var calendarE2 = document.getElementById('side-calendar');
 
-		    var calendar = new FullCalendar.Calendar(calendarEl, {
-		      allDaySlot: false,
-		      headerToolbar: false,
-		      initialDate: '<?php echo date('Y-m-d'); ?>',
-		      initialView: 'timeGridWeek',
-		      hiddenDays: [ 0, 6 ],
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				allDaySlot: false,
+				headerToolbar: false,
+				initialDate: '<?php echo date('Y-m-d'); ?>',
+				initialView: 'timeGridWeek',
+				hiddenDays: [ 0, 6 ],
 		      navLinks: true, // can click day/week names to navigate views
 		      editable: false,
 		      dayMaxEvents: true, // allow "more" link when too many events
@@ -50,197 +50,250 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 		      	$day = 0;
 		      	switch ($row['day']) {
 		      		case 'm':
-		      			$day = 1;
-		      			break;
+		      		$day = 1;
+		      		break;
 		      		case 't':
-		      			$day = 2;
-		      			break;
+		      		$day = 2;
+		      		break;
 		      		case 'w':
-		      			$day = 3;
-		      			break;
+		      		$day = 3;
+		      		break;
 		      		case 'th':
-		      			$day = 4;
-		      			break;
+		      		$day = 4;
+		      		break;
 		      		case 'f':
-		      			$day = 5;
-		      			break;
+		      		$day = 5;
+		      		break;
 		      		default:
-		      			$day = 1;
-		      			break;
+		      		$day = 1;
+		      		break;
 		      	}
 		      	?>
-		        {
-		          daysOfWeek: [<?php echo $day;?>],
+		      	{
+		      		daysOfWeek: [<?php echo $day;?>],
 		          //groupId: <?php echo $row['room']; ?>,
 		          title: 'Teacher: <?php echo $member['member_first'].' '.$member['member_last']; ?>; Class: <?php echo $row['cys']; ?>; Subject: <?php echo $row['subject_code']; ?>; Room: <?php echo $row['room']; ?>',
 		          startTime: '<?php  echo $start_time;?>',
 		          endTime: '<?php  echo $end_time;?>',
 		          url: 'sched_edit.php?id=<?php echo $row['sched_id']?>',
-		        },
-		       <?php } ?>
-		      ]
-		    });
-
-		    calendar.render();
-
-		    var sideCalendar = new FullCalendar.Calendar(calendarE2, {
-		      allDaySlot: false,
-		      headerToolbar: {
-		        left: 'title',
-		        center: '',
-		        right: 'prev,next'
 		      },
-		      initialDate: '<?php echo date('Y-m-d'); ?>',
+		  <?php } ?>
+		  ]
+		});
+
+			calendar.render();
+
+			var sideCalendar = new FullCalendar.Calendar(calendarE2, {
+				allDaySlot: false,
+				headerToolbar: {
+					left: 'title',
+					center: '',
+					right: 'prev,next'
+				},
+				initialDate: '<?php echo date('Y-m-d'); ?>',
 		      navLinks: false, // can click day/week names to navigate views
 		      editable: false,
 		      dayMaxEvents: true, // allow "more" link when too many events
 		      events: [],
-		    });
+		  });
 
-		    sideCalendar.render();
-		 	});
+			sideCalendar.render();
+		});
 
-		</script>
-    </head>
-    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-    <body class="hold-transition skin-yellow layout-top-nav" onload="myFunction()">
-    	<div class="wrapper">
-    		<?php include('../dist/includes/header.php');?>
-    		<!-- Full Width Column -->
-    		<div class="content-wrapper">
-    			<div class="home-container">
-					<!-- Main content -->
-    				<section class="content">
-    					<div class="row">
-    						<div class="col-md-3">
-    						</div>
-    						<div class="col-md-3">
-    							<?php include('../dist/includes/nav.php')?>
-    						</div>
-    						<div class="col-md-3">
-    							<div class="row mt-25">
-    								<div class="col-md-6 text-right pr-0 mt-5">
-    									<span>Print Schedule: </span>
-    								</div>
-    								<div class="col-md-6">
-		    							<select class="form-control" name="teacher" required>
-		    								<option value="class">Class</option>
-		    								<option value="teacher">Teacher</option>
-		    								<option value="room">Room</option>
-		    							</select>
-    								</div>
-    							</div>
-    						</div>
-    						<div class="col-md-3">
-    							<div class="row mt-25">
-    								<div class="col-md-6">
-    									<button class="btn btn-primary btn-flat btn-block" name="print" default>Print</button>
-    								</div>
-    							</div>
-    						</div>
-    					</div>
-    					<div class="row mt-13">
-    						<div class="col-md-3">
-    							<div id="side-calendar"></div>
-    							<div class="mt-25">
-	    							<span class="ml-5 glyphicon glyphicon-edit"></span>
-	    							<span class="ml-5">Log:</span>
-	    							<div>
-	    								<textarea rows="10" class="w-100 log border-1" readonly><?php echo $_SESSION['logs'];?></textarea>
-	    							</div>
-    							</div>
-    						</div>
-    						<div class="col-md-6">
-    							<div id="calendar" class="border-1"></div>
-    						</div><!-- /.col (right) -->
-    						<div class="col-md-3">
-    							<div class="box border-1">
-    								<div class="box-body">
-    									<form method="post" id="sched-save" action="../logic/sched_save.php">
-    										<!-- Date range -->
-    										<div id="form1">
-    											<div class="row">
-    												<div class="col-md-12">
-    													<div class="form-group">
-    														<span class="ml-5">Add Time:</span>
-    														<div class="row">
-    															<div class="col-xs-6">
-    															<span class="ml-15 glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
-    																<input type="time" id="start-time" class="form-control input-has-feedback input" name="start_time" required>
-    															</div>
-    															<div class="col-xs-6">
-    															<span class="ml-15 glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
-    																<input type="time" id="end-time" class="form-control input-has-feedback input" name="end_time" required>
-    															</div>
-    														</div>
-    													</div>
-    													<span class="ml-5">Add Day</span>
-    													<div class="form-group has-feedback">
-    														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
-    														<select class="form-control input-has-feedback input" name="day" required>
-    															<option value="m">Monday</option>
-    															<option value="t">Tuesday</option>
-    															<option value="w">Wednesday</option>
-    															<option value="th">Thursday</option>
-    															<option value="f">Friday</option>
-    														</select>
-    													</div><!-- /.form group -->
-    													<span class="ml-5">Add Teacher</span>
-    													<div class="form-group has-feedback">
-    														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
-    														<select class="form-control input-has-feedback input" name="teacher" required>
-    															<option value="">Choose a Teacher</option>
-    															<?php 
-    															$query2=mysqli_query($con,"select * from member order by member_last")or die(mysqli_error($con));
-    															while($row=mysqli_fetch_array($query2)){
-    																?>
-    																<option value="<?php echo $row['member_id'];?>"><?php echo $row['member_last'].", ".$row['member_first'];?></option>
-    																<?php }
-    															?>
-    														</select>
-    													</div><!-- /.form group -->
-    													<span class="ml-5">Add Subject</span>
-    													<div class="form-group has-feedback">
-    														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
-    														<select class="form-control input-has-feedback input" name="subject" required>
-    															<option value="">Choose a Subject</option>
-    															<?php 
-    															$query2=mysqli_query($con,"select * from subject order by subject_code")or die(mysqli_error($con));
-    															while($row=mysqli_fetch_array($query2)){
-    																?>
-    																<option><?php echo $row['subject_code'];?></option>
-    																<?php }
-    															?>
-    														</select>
-    													</div><!-- /.form group -->
-    													<span class="ml-5">Add Course, Yr & Section</span>
-    													<div class="form-group has-feedback">
-    														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
-    														<select class="form-control input-has-feedback input" name="cys" required>
-    														<option value="">Choose a Course, Yr & Section</option>
-    														<?php 
-	    														$query2=mysqli_query($con,"select * from cys order by cys")or die(mysqli_error($con));
-	    														while($row=mysqli_fetch_array($query2)){
-	    															?>
-	    															<option><?php echo $row['cys'];?></option>
-	    															<?php }
-    															?>
-    														</select>	
-    													</div><!-- /.form group -->
-    													<span class="ml-5">Add Room</span>
-    													<div class="form-group has-feedback">
-    														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
-    														<select class="form-control input-has-feedback input" name="room" required>
-    															<option value="">Choose a Room</option>
-    															<?php 
-    															$query2=mysqli_query($con,"select * from room order by room")or die(mysqli_error($con));
-    															while($row=mysqli_fetch_array($query2)){
-    																?>
-    																<option><?php echo $row['room'];?></option>
-    																<?php }
-    															?>
-    														</select>	
-    													</div><!-- /.form group -->
+	</script>
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-yellow layout-top-nav" onload="myFunction()">
+	<div class="wrapper">
+		<?php include('../dist/includes/header.php');?>
+		<!-- Full Width Column -->
+		<div class="content-wrapper">
+			<div class="home-container">
+				<!-- Main content -->
+				<section class="content">
+					<div class="row">
+						<div class="col-md-3">
+						</div>
+						<div class="col-md-3">
+							<?php include('../dist/includes/nav.php')?>
+						</div>
+						<div class="col-md-3">
+							<div class="row mt-25">
+								<div class="col-md-6 text-right pr-0 mt-5">
+									<span>Print Schedule: </span>
+								</div>
+								<div class="col-md-6">
+									<select class="form-control print" name="print" required>
+										<option>Select to print</option>
+										<option value="class">Class</option>
+										<option value="teacher">Teacher</option>
+										<option value="room">Room</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="row mt-25">
+								<div class="col-md-6 pr-0 sel-print" style="display: none;">
+									<?php 
+									$selMember = mysqli_query($con,"SELECT * FROM member") or die(mysqli_error($con));
+									$member_id = '';
+									if($_REQUEST['member_id'] != null){
+										$member_id = $_REQUEST['member_id'];
+									}
+									?>
+									<select style="display: none;" class="form-control border-1 member">
+										<option value="">Select a Teacher</option>
+										<?php
+										while($member = mysqli_fetch_array($selMember)){?>
+											<option value="<?php echo $member['member_id'];?>" <?php echo $member['member_id'] == $member_id? 'selected':''; ?>>
+												<?php echo $member['member_first'];?> <?php echo $member['member_last'];?>
+											</option>
+										<?php }?>
+									</select>
+
+									<?php 
+									$selCys = mysqli_query($con,"SELECT * FROM cys") or die(mysqli_error($con));
+									$class_id = '';
+									if($_REQUEST['class_id'] != null){
+										$class_id = $_REQUEST['class_id'];
+									}
+									?>
+									<select style="display: none;" class="form-control border-1 cys">
+										<option value="">Select a Class</option>
+										<?php
+										while($cys = mysqli_fetch_array($selCys)){?>
+											<option value="<?php echo $cys['cys'];?>" <?php echo $cys['cys'] == $class_id? 'selected':''; ?>>
+												<?php echo $cys['cys'];?>
+											</option>
+										<?php }?>
+									</select>
+
+									<?php 
+									$selRoom = mysqli_query($con,"SELECT * FROM room") or die(mysqli_error($con));
+									$room_id = '';
+									if($_REQUEST['room_id'] != null){
+										$room_id = $_REQUEST['room_id'];
+									}
+									?>
+									<select style="display: none;" class="form-control border-1 room">
+										<option value="">Select a Room</option>
+										<?php
+										while($room = mysqli_fetch_array($selRoom)){?>
+											<option value="<?php echo $room['room'];?>" <?php echo $room['room'] == $room_id ? 'selected':''; ?>>
+												<?php echo $room['room'];?>
+											</option>
+										<?php }?>
+									</select>
+								</div>
+								<div class="col-md-6">
+									<button class="btn btn-primary btn-flat btn-block print-button" name="print" disabled default>Print</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-13">
+						<div class="col-md-3">
+							<div id="side-calendar"></div>
+							<div class="mt-25">
+								<span class="ml-5 glyphicon glyphicon-edit"></span>
+								<span class="ml-5">Log:</span>
+								<div>
+									<textarea rows="10" class="w-100 log border-1" readonly><?php echo $_SESSION['logs'];?></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div id="calendar" class="border-1"></div>
+						</div><!-- /.col (right) -->
+						<div class="col-md-3">
+							<div class="box border-1">
+								<div class="box-body">
+									<form method="post" id="sched-save" action="../logic/sched_save.php">
+										<!-- Date range -->
+										<div id="form1">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="form-group">
+														<span class="ml-5">Add Time:</span>
+														<div class="row">
+															<div class="col-xs-6">
+																<span class="ml-15 glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
+																<input type="time" id="start-time" class="form-control input-has-feedback input" name="start_time" required>
+															</div>
+															<div class="col-xs-6">
+																<span class="ml-15 glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
+																<input type="time" id="end-time" class="form-control input-has-feedback input" name="end_time" required>
+															</div>
+														</div>
+													</div>
+													<span class="ml-5">Add Day</span>
+													<div class="form-group has-feedback">
+														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
+														<select class="form-control input-has-feedback input" name="day" required>
+															<option value="m">Monday</option>
+															<option value="t">Tuesday</option>
+															<option value="w">Wednesday</option>
+															<option value="th">Thursday</option>
+															<option value="f">Friday</option>
+														</select>
+													</div><!-- /.form group -->
+													<span class="ml-5">Add Teacher</span>
+													<div class="form-group has-feedback">
+														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
+														<select class="form-control input-has-feedback input" name="teacher" required>
+															<option value="">Choose a Teacher</option>
+															<?php 
+															$query2=mysqli_query($con,"select * from member order by member_last")or die(mysqli_error($con));
+															while($row=mysqli_fetch_array($query2)){
+																?>
+																<option value="<?php echo $row['member_id'];?>"><?php echo $row['member_last'].", ".$row['member_first'];?></option>
+															<?php }
+															?>
+														</select>
+													</div><!-- /.form group -->
+													<span class="ml-5">Add Subject</span>
+													<div class="form-group has-feedback">
+														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
+														<select class="form-control input-has-feedback input" name="subject" required>
+															<option value="">Choose a Subject</option>
+															<?php 
+															$query2=mysqli_query($con,"select * from subject order by subject_code")or die(mysqli_error($con));
+															while($row=mysqli_fetch_array($query2)){
+																?>
+																<option><?php echo $row['subject_code'];?></option>
+															<?php }
+															?>
+														</select>
+													</div><!-- /.form group -->
+													<span class="ml-5">Add Course, Yr & Section</span>
+													<div class="form-group has-feedback">
+														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
+														<select class="form-control input-has-feedback input" name="cys" required>
+															<option value="">Choose a Course, Yr & Section</option>
+															<?php 
+															$query2=mysqli_query($con,"select * from cys order by cys")or die(mysqli_error($con));
+															while($row=mysqli_fetch_array($query2)){
+																?>
+																<option><?php echo $row['cys'];?></option>
+															<?php }
+															?>
+														</select>	
+													</div><!-- /.form group -->
+													<span class="ml-5">Add Room</span>
+													<div class="form-group has-feedback">
+														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
+														<select class="form-control input-has-feedback input" name="room" required>
+															<option value="">Choose a Room</option>
+															<?php 
+															$query2=mysqli_query($con,"select * from room order by room")or die(mysqli_error($con));
+															while($row=mysqli_fetch_array($query2)){
+																?>
+																<option><?php echo $row['room'];?></option>
+															<?php }
+															?>
+														</select>	
+													</div><!-- /.form group -->
     													<!-- <div class="form-group">
     														<span class="ml-5">Add Remarks</span><br>
     														<textarea name="remarks" cols="30" placeholder="enclose remarks with parenthesis()"></textarea>
@@ -267,130 +320,102 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
     		<?php include('../dist/includes/footer.php');?>
     	</div><!-- ./wrapper -->
 
-    	<div id="searcht" class="modal fade in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    		<div class="modal-dialog">
-    			<div class="modal-content" style="height:auto">
-    				<div class="modal-header">
-    					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    					<span aria-hidden="true">×</span></button>
-    					<h4 class="modal-title">Search Faculty Schedule</h4>
-    				</div>
-    				<div class="modal-body">
-    					<form class="form-horizontal" method="post" action="faculty_sched.php" target="_blank">
-
-    						<div class="form-group">
-    							<label class="control-label col-lg-2" for="name">Faculty</label>
-    							<div class="col-lg-10">
-    								<select class="select2" name="faculty" style="width:90%!important" required>
-    									<?php 
-
-    									$query2=mysqli_query($con,"select * from member order by member_last")or die(mysqli_error($con));
-    									while($row=mysqli_fetch_array($query2)){
-    										?>
-    										<option value="<?php echo $row['member_id'];?>"><?php echo $row['member_last'].", ".$row['member_first'];?></option>
-    									<?php }
-
-    									?>
-    								</select>
-    							</div>
-    						</div> 
-    					</form>
-    				</div><hr>
-    				<div class="modal-footer">
-    					<button type="submit" name="search" class="btn btn-primary">Display Schedule</button>
-    					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    				</div>
-    			</div>
-    		</div><!--end of modal-dialog-->
-    	</div><!--end of modal--> 
-
-    	<div id="searchclass" class="modal fade in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    		<div class="modal-dialog">
-    			<div class="modal-content" style="height:auto">
-    				<div class="modal-header">
-    					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    						<span aria-hidden="true">×</span>
-    					</button>
-    					<h4 class="modal-title">Search Class Schedule</h4>
-    				</div>
-    				<div class="modal-body">
-    					<form class="form-horizontal" method="post" action="class_sched.php" target="_blank">
-    						<div class="form-group">
-    							<label class="control-label col-lg-2" for="name">Class</label>
-    							<div class="col-lg-10">
-    								<select class="select2" name="class" style="width:90%!important" required>
-    									<?php 
-
-    									$query2=mysqli_query($con,"select * from cys order by cys")or die(mysqli_error($con));
-    									while($row=mysqli_fetch_array($query2)){
-    										?>
-    										<option><?php echo $row['cys'];?></option>
-    									<?php }
-
-    									?>
-    								</select>
-    							</div>
-    						</div> 
-    					</form>
-    				</div><hr>
-    				<div class="modal-footer">
-    					<button type="submit" name="search" class="btn btn-primary">Display Schedule</button>
-    					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    				</div>
-    			</div>
-    		</div><!--end of modal-dialog-->
-    	</div><!--end of modal--> 
-
-    	<div id="searchroom" class="modal fade in" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    		<div class="modal-dialog">
-    			<div class="modal-content" style="height:auto">
-    				<div class="modal-header">
-    					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    						<span aria-hidden="true">×</span>
-    					</button>
-    					<h4 class="modal-title">Search Room Schedule</h4>
-    				</div>
-    				<div class="modal-body">
-    					<form class="form-horizontal" method="post" action="room_sched.php" target="_blank">
-
-    						<div class="form-group">
-    							<label class="control-label col-lg-2" for="name">Room</label>
-    							<div class="col-lg-10">
-    								<select class="select2" name="room" style="width:90%!important" required>
-    									<?php 
-
-    									$query2=mysqli_query($con,"select * from room order by room")or die(mysqli_error($con));
-    									while($row=mysqli_fetch_array($query2)){
-    										?>
-    										<option><?php echo $row['room'];?></option>
-    									<?php }
-
-    									?>
-    								</select>
-    							</div>
-    						</div> 
-    					</form>
-    				</div><hr>
-    				<div class="modal-footer">
-    					<button type="submit" name="search" class="btn btn-primary">Display Schedule</button>
-    					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    				</div>
-    			</div>
-
-    		</div><!--end of modal-dialog-->
-    	</div><!--end of modal--> 
     	<script type="text/javascript">
-			$(document).on('submit', '#reg-form', function()
+    		$(".print").on('change', function(){
+    			let val = $(this).val();
+    			if(val == 'teacher'){
+    				$(".sel-print").show(250);
+    				$(".member").show(250);
+    				$(".cys").hide(150);
+    				$(".room").hide(150);    			}
+    			else if(val == 'class'){
+    				$(".sel-print").show(250);
+    				$(".member").hide(150);
+    				$(".cys").show(250);
+    				$(".room").hide(150);
+    			}
+    			else if(val == 'room'){
+    				$(".sel-print").show(250);
+    				$(".member").hide(150);
+    				$(".cys").hide(150);
+    				$(".room").show(250);
+    			}else{
+    				$(".sel-print").hide(150);
+    				$(".member").hide(150);
+    				$(".cys").hide(150);
+    				$(".room").hide(150);
+    				$(".print-button").prop('disabled', true);
+    			}
+    		});
+
+    		$(".member").on('change', function(){
+    			let val = $(this).val();
+    			console.log(val);
+    			if(val != ''){
+    				$(".print-button").prop('disabled', false);
+    			}else{
+    				$(".print-button").prop('disabled', true);
+    			}
+    		});
+    		$(".cys").on('change', function(){
+    			let val = $(this).val();
+    			console.log(val);
+    			if(val != ''){
+    				$(".print-button").prop('disabled', false);
+    			}else{
+    				$(".print-button").prop('disabled', true);
+    			}
+    		});
+    		$(".room").on('change', function(){
+    			let val = $(this).val();
+    			console.log(val);
+    			if(val != ''){
+    				$(".print-button").prop('disabled', false);
+    			}else{
+    				$(".print-button").prop('disabled', true);
+    			}
+    		});
+
+    		$(".print-button").on('click', function(){
+    			let printVal = $(".print").val();
+    			let type = '';
+    			let val = '';
+    			if(printVal == 'teacher'){
+    				val = $(".member").val();
+    				window.open(
+					  '../pages/faculty_sched.php?id='+val,
+					  '_blank' // <- This is what makes it open in a new window.
+					);
+    			}
+    			else if(printVal == 'class'){    				
+    				val = $(".cys").val();
+    				window.open(
+					  '../pages/class_sched.php?id='+val,
+					  '_blank' // <- This is what makes it open in a new window.
+					);
+    			}
+    			else if(printVal == 'room'){
+    				val = $(".room").val();
+    				window.open(
+					  '../pages/room_sched.php?id='+val,
+					  '_blank' // <- This is what makes it open in a new window.
+					);
+    			}else{
+    				// do nothing
+    			}
+    		});
+
+    		$(document).on('submit', '#reg-form', function()
     		{  
     			$.post('submit.php', $(this).serialize(), function(data){
     				$(".result").html(data);  
     				$("#form1")[0].reset();
 		  			// $("#check").reset();
-				});
+		  		});
     			return false;
     		})
 
-			$(document).on('submit', '#sched-save', function(event)
+    		$(document).on('submit', '#sched-save', function(event)
     		{  
     			let start = $("#start-time").val();
     			let end = $("#end-time").val();
@@ -398,7 +423,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
     				event.preventDefault();
     				alert('Start Time must be lower than the End Time');
     			}
-    	})
+    		})
 
     		$(".uncheck").click(function () {
     			$('input:checkbox').removeAttr('checked');

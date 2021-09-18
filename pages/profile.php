@@ -36,6 +36,9 @@ endif;?>
         ?>	
         <!-- Main content -->
         <section class="content">
+          <?php 
+          if($_SESSION['type'] == 'admin'){
+          ?>
           <div class="row">
             <div class="col-md-2">
             </div>
@@ -43,12 +46,13 @@ endif;?>
               <?php include('../dist/includes/nav.php')?>
             </div>
           </div>
+          <?php }?>
           <div class="row mt-13">
             <div class="col-md-2"></div>
             <div class="col-md-8">
             <div class="box border-1">
               <div class="row mt-13">
-                <a href="home.php" class="text-black float-right"> <span class="glyphicon glyphicon-circle-arrow-left"></span> BACK</a>
+                <a href="<?php echo $_SESSION['type']=='admin'?'home.php':'faculty_home.php';?>" class="text-black float-right"> <span class="glyphicon glyphicon-circle-arrow-left"></span> BACK</a>
               </div>
               <div class="row text-center">
                 <img src="../dist/img/user.png" class="img-user"><br>
