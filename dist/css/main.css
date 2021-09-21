@@ -232,7 +232,6 @@ input[type="checkbox"].switch_1{
 	width: 100%;
 }
 .table-calendar tr td{
-	border: 1px dotted #dddddd;
 	text-align: center;
 	padding: 1px;
 	width: 0%;

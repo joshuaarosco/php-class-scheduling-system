@@ -60,9 +60,9 @@ function checkScheds($_start_time, $_end_time, $_day, $_type){
 	}
 
 	if($counter>0){
-		return 'background: #3788d8; border: 1px solid #3788d8!important; border-right: 1px solid #dddddd!important; border-left: 1px solid #dddddd!important;';
+		return 'border-left: 1px dotted #000; border-right: 1px dotted #000;';
 	}else{
-		return '';
+		return 'border: 1px dotted #000;';
 	}
 }
 
@@ -192,264 +192,264 @@ unset($_SESSION["sched_ids"]);
 							</div>
 							<table class="table-calendar border-1">
 								<tr>
-									<td class="first-td"><small><strong class="text-primary">TIME</strong></small></td>
-									<td><small><strong class="text-primary">MONDAY</strong></small></td>
-									<td><small><strong class="text-primary">TUESDAY</strong></small></td>
-									<td><small><strong class="text-primary">WEDNESDAY</strong></small></td>
-									<td><small><strong class="text-primary">THURSDAY</strong></small></td>
-									<td><small><strong class="text-primary">FRIDAY</strong></small></td>
-									<td><small><strong class="text-primary">SATURDAY</strong></small></td>
-									<td><small><strong class="text-primary">TIME</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>TIME</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>MONDAY</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>TUESDAY</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>WEDNESDAY</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>THURSDAY</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>FRIDAY</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>SATURDAY</strong></small></td>
+									<td style="border: 1px dotted #000;"><small><strong>TIME</strong></small></td>
 								</tr>
 								<tr>
-									<td>7:00-7:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','m',$type);?>"><?php checkId('07:00','07:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','t',$type);?>"><?php checkId('07:00','07:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','w',$type);?>"><?php checkId('07:00','07:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','th',$type);?>"><?php checkId('07:00','07:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','f',$type);?>"><?php checkId('07:00','07:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','s',$type);?>"><?php checkId('07:00','07:30','s',$type);?></td>
-									<td>7:00-7:30</td>
+									<td style="border: 1px dotted #000;">7:00-7:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','m',$type);?>"><?php checkId('07:00','07:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','t',$type);?>"><?php checkId('07:00','07:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','w',$type);?>"><?php checkId('07:00','07:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','th',$type);?>"><?php checkId('07:00','07:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','f',$type);?>"><?php checkId('07:00','07:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:00','07:30','s',$type);?>"><?php checkId('07:00','07:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">7:00-7:30</td>
 								</tr>
 								<tr>
-									<td>7:30-8:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','m',$type);?>"><?php checkId('07:30','08:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','t',$type);?>"><?php checkId('07:30','08:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','w',$type);?>"><?php checkId('07:30','08:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','th',$type);?>"><?php checkId('07:30','08:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','f',$type);?>"><?php checkId('07:30','08:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','s',$type);?>"><?php checkId('07:30','08:00','s',$type);?></td>
-									<td>7:30-8:00</td>
+									<td style="border: 1px dotted #000;">7:30-8:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','m',$type);?>"><?php checkId('07:30','08:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','t',$type);?>"><?php checkId('07:30','08:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','w',$type);?>"><?php checkId('07:30','08:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','th',$type);?>"><?php checkId('07:30','08:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','f',$type);?>"><?php checkId('07:30','08:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('07:30','08:00','s',$type);?>"><?php checkId('07:30','08:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">7:30-8:00</td>
 								</tr>
 								<tr>
-									<td>8:00-8:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','m',$type);?>"><?php checkId('08:00','08:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','t',$type);?>"><?php checkId('08:00','08:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','w',$type);?>"><?php checkId('08:00','08:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','th',$type);?>"><?php checkId('08:00','08:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','f',$type);?>"><?php checkId('08:00','08:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','s',$type);?>"><?php checkId('08:00','08:30','s',$type);?></td>
-									<td>8:00-8:30</td>
+									<td style="border: 1px dotted #000;">8:00-8:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','m',$type);?>"><?php checkId('08:00','08:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','t',$type);?>"><?php checkId('08:00','08:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','w',$type);?>"><?php checkId('08:00','08:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','th',$type);?>"><?php checkId('08:00','08:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','f',$type);?>"><?php checkId('08:00','08:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:00','08:30','s',$type);?>"><?php checkId('08:00','08:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">8:00-8:30</td>
 								</tr>
 								<tr>
-									<td>8:30-9:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','m',$type);?>"><?php checkId('08:30','09:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','t',$type);?>"><?php checkId('08:30','09:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','w',$type);?>"><?php checkId('08:30','09:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','th',$type);?>"><?php checkId('08:30','09:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','f',$type);?>"><?php checkId('08:30','09:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','s',$type);?>"><?php checkId('08:30','09:00','s',$type);?></td>
-									<td>8:30-9:00</td>
+									<td style="border: 1px dotted #000;">8:30-9:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','m',$type);?>"><?php checkId('08:30','09:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','t',$type);?>"><?php checkId('08:30','09:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','w',$type);?>"><?php checkId('08:30','09:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','th',$type);?>"><?php checkId('08:30','09:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','f',$type);?>"><?php checkId('08:30','09:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('08:30','09:00','s',$type);?>"><?php checkId('08:30','09:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">8:30-9:00</td>
 								</tr>
 								<tr>
-									<td>9:00-9:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','m',$type);?>"><?php checkId('09:00','09:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','t',$type);?>"><?php checkId('09:00','09:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','w',$type);?>"><?php checkId('09:00','09:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','th',$type);?>"><?php checkId('09:00','09:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','f',$type);?>"><?php checkId('09:00','09:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','s',$type);?>"><?php checkId('09:00','09:30','s',$type);?></td>
-									<td>9:00-9:30</td>
+									<td style="border: 1px dotted #000;">9:00-9:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','m',$type);?>"><?php checkId('09:00','09:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','t',$type);?>"><?php checkId('09:00','09:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','w',$type);?>"><?php checkId('09:00','09:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','th',$type);?>"><?php checkId('09:00','09:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','f',$type);?>"><?php checkId('09:00','09:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:00','09:30','s',$type);?>"><?php checkId('09:00','09:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">9:00-9:30</td>
 								</tr>
 								<tr>
-									<td>9:30-10:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','m',$type);?>"><?php checkId('09:30','10:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','t',$type);?>"><?php checkId('09:30','10:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','w',$type);?>"><?php checkId('09:30','10:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','th',$type);?>"><?php checkId('09:30','10:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','f',$type);?>"><?php checkId('09:30','10:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','s',$type);?>"><?php checkId('09:30','10:00','s',$type);?></td>
-									<td>9:30-10:00</td>
+									<td style="border: 1px dotted #000;">9:30-10:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','m',$type);?>"><?php checkId('09:30','10:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','t',$type);?>"><?php checkId('09:30','10:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','w',$type);?>"><?php checkId('09:30','10:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','th',$type);?>"><?php checkId('09:30','10:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','f',$type);?>"><?php checkId('09:30','10:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('09:30','10:00','s',$type);?>"><?php checkId('09:30','10:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">9:30-10:00</td>
 								</tr>
 								<tr>
-									<td>10:00-10:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','m',$type);?>"><?php checkId('10:00','10:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','t',$type);?>"><?php checkId('10:00','10:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','w',$type);?>"><?php checkId('10:00','10:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','th',$type);?>"><?php checkId('10:00','10:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','f',$type);?>"><?php checkId('10:00','10:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','s',$type);?>"><?php checkId('10:00','10:30','s',$type);?></td>
-									<td>10:00-10:30</td>
+									<td style="border: 1px dotted #000;">10:00-10:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','m',$type);?>"><?php checkId('10:00','10:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','t',$type);?>"><?php checkId('10:00','10:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','w',$type);?>"><?php checkId('10:00','10:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','th',$type);?>"><?php checkId('10:00','10:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','f',$type);?>"><?php checkId('10:00','10:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:00','10:30','s',$type);?>"><?php checkId('10:00','10:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">10:00-10:30</td>
 								</tr>
 								<tr>
-									<td>10:30-11:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','m',$type);?>"><?php checkId('10:30','11:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','t',$type);?>"><?php checkId('10:30','11:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','w',$type);?>"><?php checkId('10:30','11:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','th',$type);?>"><?php checkId('10:30','11:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','f',$type);?>"><?php checkId('10:30','11:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','s',$type);?>"><?php checkId('10:30','11:00','s',$type);?></td>
-									<td>10:30-11:00</td>
+									<td style="border: 1px dotted #000;">10:30-11:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','m',$type);?>"><?php checkId('10:30','11:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','t',$type);?>"><?php checkId('10:30','11:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','w',$type);?>"><?php checkId('10:30','11:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','th',$type);?>"><?php checkId('10:30','11:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','f',$type);?>"><?php checkId('10:30','11:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('10:30','11:00','s',$type);?>"><?php checkId('10:30','11:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">10:30-11:00</td>
 								</tr>
 								<tr>
-									<td>11:00-11:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','m',$type);?>"><?php checkId('11:00','11:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','t',$type);?>"><?php checkId('11:00','11:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','w',$type);?>"><?php checkId('11:00','11:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','th',$type);?>"><?php checkId('11:00','11:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','f',$type);?>"><?php checkId('11:00','11:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','s',$type);?>"><?php checkId('11:00','11:30','s',$type);?></td>
-									<td>11:00-11:30</td>
+									<td style="border: 1px dotted #000;">11:00-11:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','m',$type);?>"><?php checkId('11:00','11:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','t',$type);?>"><?php checkId('11:00','11:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','w',$type);?>"><?php checkId('11:00','11:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','th',$type);?>"><?php checkId('11:00','11:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','f',$type);?>"><?php checkId('11:00','11:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:00','11:30','s',$type);?>"><?php checkId('11:00','11:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">11:00-11:30</td>
 								</tr>
 								<tr>
-									<td>11:30-12:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','m',$type);?>"><?php checkId('11:30','12:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','t',$type);?>"><?php checkId('11:30','12:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','w',$type);?>"><?php checkId('11:30','12:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','th',$type);?>"><?php checkId('11:30','12:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','f',$type);?>"><?php checkId('11:30','12:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','s',$type);?>"><?php checkId('11:30','12:00','s',$type);?></td>
-									<td>11:30-12:00</td>
+									<td style="border: 1px dotted #000;">11:30-12:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','m',$type);?>"><?php checkId('11:30','12:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','t',$type);?>"><?php checkId('11:30','12:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','w',$type);?>"><?php checkId('11:30','12:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','th',$type);?>"><?php checkId('11:30','12:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','f',$type);?>"><?php checkId('11:30','12:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('11:30','12:00','s',$type);?>"><?php checkId('11:30','12:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">11:30-12:00</td>
 								</tr>
 								<tr>
-									<td>12:00-12:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','m',$type);?>"><?php checkId('12:00','12:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','t',$type);?>"><?php checkId('12:00','12:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','w',$type);?>"><?php checkId('12:00','12:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','th',$type);?>"><?php checkId('12:00','12:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','f',$type);?>"><?php checkId('12:00','12:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','s',$type);?>"><?php checkId('12:00','12:30','s',$type);?></td>
-									<td>12:00-12:30</td>
+									<td style="border: 1px dotted #000;">12:00-12:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','m',$type);?>"><?php checkId('12:00','12:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','t',$type);?>"><?php checkId('12:00','12:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','w',$type);?>"><?php checkId('12:00','12:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','th',$type);?>"><?php checkId('12:00','12:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','f',$type);?>"><?php checkId('12:00','12:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:00','12:30','s',$type);?>"><?php checkId('12:00','12:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">12:00-12:30</td>
 								</tr>
 								<tr>
-									<td>12:30-1:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','m',$type);?>"><?php checkId('12:30','13:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','t',$type);?>"><?php checkId('12:30','13:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','w',$type);?>"><?php checkId('12:30','13:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','th',$type);?>"><?php checkId('12:30','13:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','f',$type);?>"><?php checkId('12:30','13:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','s',$type);?>"><?php checkId('12:30','13:00','s',$type);?></td>
-									<td>12:30-1:00</td>
+									<td style="border: 1px dotted #000;">12:30-1:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','m',$type);?>"><?php checkId('12:30','13:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','t',$type);?>"><?php checkId('12:30','13:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','w',$type);?>"><?php checkId('12:30','13:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','th',$type);?>"><?php checkId('12:30','13:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','f',$type);?>"><?php checkId('12:30','13:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('12:30','13:00','s',$type);?>"><?php checkId('12:30','13:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">12:30-1:00</td>
 								</tr>
 								<tr>
-									<td>1:00-1:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','m',$type);?>"><?php checkId('13:00','13:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','t',$type);?>"><?php checkId('13:00','13:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','w',$type);?>"><?php checkId('13:00','13:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','th',$type);?>"><?php checkId('13:00','13:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','f',$type);?>"><?php checkId('13:00','13:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','s',$type);?>"><?php checkId('13:00','13:30','s',$type);?></td>
-									<td>1:00-1:30</td>
+									<td style="border: 1px dotted #000;">1:00-1:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','m',$type);?>"><?php checkId('13:00','13:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','t',$type);?>"><?php checkId('13:00','13:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','w',$type);?>"><?php checkId('13:00','13:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','th',$type);?>"><?php checkId('13:00','13:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','f',$type);?>"><?php checkId('13:00','13:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:00','13:30','s',$type);?>"><?php checkId('13:00','13:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">1:00-1:30</td>
 								</tr>
 								<tr>
-									<td>1:30-2:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','m',$type);?>"><?php checkId('13:30','14:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','t',$type);?>"><?php checkId('13:30','14:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','w',$type);?>"><?php checkId('13:30','14:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','th',$type);?>"><?php checkId('13:30','14:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','f',$type);?>"><?php checkId('13:30','14:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','s',$type);?>"><?php checkId('13:30','14:00','s',$type);?></td>
-									<td>1:30-2:00</td>
+									<td style="border: 1px dotted #000;">1:30-2:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','m',$type);?>"><?php checkId('13:30','14:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','t',$type);?>"><?php checkId('13:30','14:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','w',$type);?>"><?php checkId('13:30','14:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','th',$type);?>"><?php checkId('13:30','14:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','f',$type);?>"><?php checkId('13:30','14:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('13:30','14:00','s',$type);?>"><?php checkId('13:30','14:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">1:30-2:00</td>
 								</tr>
 								<tr>
-									<td>2:00-2:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','m',$type);?>"><?php checkId('14:00','14:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','t',$type);?>"><?php checkId('14:00','14:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','w',$type);?>"><?php checkId('14:00','14:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','th',$type);?>"><?php checkId('14:00','14:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','f',$type);?>"><?php checkId('14:00','14:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','s',$type);?>"><?php checkId('14:00','14:30','s',$type);?></td>
-									<td>2:00-2:30</td>
+									<td style="border: 1px dotted #000;">2:00-2:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','m',$type);?>"><?php checkId('14:00','14:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','t',$type);?>"><?php checkId('14:00','14:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','w',$type);?>"><?php checkId('14:00','14:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','th',$type);?>"><?php checkId('14:00','14:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','f',$type);?>"><?php checkId('14:00','14:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:00','14:30','s',$type);?>"><?php checkId('14:00','14:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">2:00-2:30</td>
 								</tr>
 								<tr>
-									<td>2:30-3:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','m',$type);?>"><?php checkId('14:30','15:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','t',$type);?>"><?php checkId('14:30','15:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','w',$type);?>"><?php checkId('14:30','15:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','th',$type);?>"><?php checkId('14:30','15:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','f',$type);?>"><?php checkId('14:30','15:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','s',$type);?>"><?php checkId('14:30','15:00','s',$type);?></td>
-									<td>2:30-3:00</td>
+									<td style="border: 1px dotted #000;">2:30-3:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','m',$type);?>"><?php checkId('14:30','15:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','t',$type);?>"><?php checkId('14:30','15:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','w',$type);?>"><?php checkId('14:30','15:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','th',$type);?>"><?php checkId('14:30','15:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','f',$type);?>"><?php checkId('14:30','15:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('14:30','15:00','s',$type);?>"><?php checkId('14:30','15:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">2:30-3:00</td>
 								</tr>
 								<tr>
-									<td>3:00-3:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','m',$type);?>"><?php checkId('15:00','15:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','t',$type);?>"><?php checkId('15:00','15:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','w',$type);?>"><?php checkId('15:00','15:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','th',$type);?>"><?php checkId('15:00','15:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','f',$type);?>"><?php checkId('15:00','15:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','s',$type);?>"><?php checkId('15:00','15:30','s',$type);?></td>
-									<td>3:00-3:30</td>
+									<td style="border: 1px dotted #000;">3:00-3:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','m',$type);?>"><?php checkId('15:00','15:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','t',$type);?>"><?php checkId('15:00','15:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','w',$type);?>"><?php checkId('15:00','15:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','th',$type);?>"><?php checkId('15:00','15:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','f',$type);?>"><?php checkId('15:00','15:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:00','15:30','s',$type);?>"><?php checkId('15:00','15:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">3:00-3:30</td>
 								</tr>
 								<tr>
-									<td>3:30-4:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','m',$type);?>"><?php checkId('15:30','16:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','t',$type);?>"><?php checkId('15:30','16:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','w',$type);?>"><?php checkId('15:30','16:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','th',$type);?>"><?php checkId('15:30','16:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','f',$type);?>"><?php checkId('15:30','16:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','s',$type);?>"><?php checkId('15:30','16:00','s',$type);?></td>
-									<td>3:30-4:00</td>
+									<td style="border: 1px dotted #000;">3:30-4:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','m',$type);?>"><?php checkId('15:30','16:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','t',$type);?>"><?php checkId('15:30','16:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','w',$type);?>"><?php checkId('15:30','16:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','th',$type);?>"><?php checkId('15:30','16:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','f',$type);?>"><?php checkId('15:30','16:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('15:30','16:00','s',$type);?>"><?php checkId('15:30','16:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">3:30-4:00</td>
 								</tr>
 								<tr>
-									<td>4:00-4:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','m',$type);?>"><?php checkId('16:00','16:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','t',$type);?>"><?php checkId('16:00','16:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','w',$type);?>"><?php checkId('16:00','16:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','th',$type);?>"><?php checkId('16:00','16:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','f',$type);?>"><?php checkId('16:00','16:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','s',$type);?>"><?php checkId('16:00','16:30','s',$type);?></td>
-									<td>4:00-4:30</td>
+									<td style="border: 1px dotted #000;">4:00-4:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','m',$type);?>"><?php checkId('16:00','16:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','t',$type);?>"><?php checkId('16:00','16:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','w',$type);?>"><?php checkId('16:00','16:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','th',$type);?>"><?php checkId('16:00','16:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','f',$type);?>"><?php checkId('16:00','16:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:00','16:30','s',$type);?>"><?php checkId('16:00','16:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">4:00-4:30</td>
 								</tr>
 								<tr>
-									<td>4:30-5:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','m',$type);?>"><?php checkId('16:30','17:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','t',$type);?>"><?php checkId('16:30','17:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','w',$type);?>"><?php checkId('16:30','17:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','th',$type);?>"><?php checkId('16:30','17:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','f',$type);?>"><?php checkId('16:30','17:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','s',$type);?>"><?php checkId('16:30','17:00','s',$type);?></td>
-									<td>4:30-5:00</td>
+									<td style="border: 1px dotted #000;">4:30-5:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','m',$type);?>"><?php checkId('16:30','17:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','t',$type);?>"><?php checkId('16:30','17:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','w',$type);?>"><?php checkId('16:30','17:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','th',$type);?>"><?php checkId('16:30','17:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','f',$type);?>"><?php checkId('16:30','17:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('16:30','17:00','s',$type);?>"><?php checkId('16:30','17:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">4:30-5:00</td>
 								</tr>
 								<tr>
-									<td>5:00-5:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','m',$type);?>"><?php checkId('17:00','17:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','t',$type);?>"><?php checkId('17:00','17:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','w',$type);?>"><?php checkId('17:00','17:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','th',$type);?>"><?php checkId('17:00','17:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','f',$type);?>"><?php checkId('17:00','17:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','s',$type);?>"><?php checkId('17:00','17:30','s',$type);?></td>
-									<td>5:00-5:30</td>
+									<td style="border: 1px dotted #000;">5:00-5:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','m',$type);?>"><?php checkId('17:00','17:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','t',$type);?>"><?php checkId('17:00','17:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','w',$type);?>"><?php checkId('17:00','17:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','th',$type);?>"><?php checkId('17:00','17:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','f',$type);?>"><?php checkId('17:00','17:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:00','17:30','s',$type);?>"><?php checkId('17:00','17:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">5:00-5:30</td>
 								</tr>
 								<tr>
-									<td>5:30-6:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','m',$type);?>"><?php checkId('17:30','18:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','t',$type);?>"><?php checkId('17:30','18:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','w',$type);?>"><?php checkId('17:30','18:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','th',$type);?>"><?php checkId('17:30','18:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','f',$type);?>"><?php checkId('17:30','18:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','s',$type);?>"><?php checkId('17:30','18:00','s',$type);?></td>
-									<td>5:30-6:00</td>
+									<td style="border: 1px dotted #000;">5:30-6:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','m',$type);?>"><?php checkId('17:30','18:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','t',$type);?>"><?php checkId('17:30','18:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','w',$type);?>"><?php checkId('17:30','18:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','th',$type);?>"><?php checkId('17:30','18:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','f',$type);?>"><?php checkId('17:30','18:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('17:30','18:00','s',$type);?>"><?php checkId('17:30','18:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">5:30-6:00</td>
 								</tr>
 								<tr>
-									<td>6:00-6:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','m',$type);?>"><?php checkId('18:00','18:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','t',$type);?>"><?php checkId('18:00','18:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','w',$type);?>"><?php checkId('18:00','18:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','th',$type);?>"><?php checkId('18:00','18:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','f',$type);?>"><?php checkId('18:00','18:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','s',$type);?>"><?php checkId('18:00','18:30','s',$type);?></td>
-									<td>6:00-6:30</td>
+									<td style="border: 1px dotted #000;">6:00-6:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','m',$type);?>"><?php checkId('18:00','18:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','t',$type);?>"><?php checkId('18:00','18:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','w',$type);?>"><?php checkId('18:00','18:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','th',$type);?>"><?php checkId('18:00','18:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','f',$type);?>"><?php checkId('18:00','18:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:00','18:30','s',$type);?>"><?php checkId('18:00','18:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">6:00-6:30</td>
 								</tr>
 								<tr>
-									<td>6:30-7:00</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','m',$type);?>"><?php checkId('18:30','19:00','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','t',$type);?>"><?php checkId('18:30','19:00','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','w',$type);?>"><?php checkId('18:30','19:00','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','th',$type);?>"><?php checkId('18:30','19:00','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','f',$type);?>"><?php checkId('18:30','19:00','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','s',$type);?>"><?php checkId('18:30','19:00','s',$type);?></td>
-									<td>6:30-7:00</td>
+									<td style="border: 1px dotted #000;">6:30-7:00</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','m',$type);?>"><?php checkId('18:30','19:00','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','t',$type);?>"><?php checkId('18:30','19:00','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','w',$type);?>"><?php checkId('18:30','19:00','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','th',$type);?>"><?php checkId('18:30','19:00','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','f',$type);?>"><?php checkId('18:30','19:00','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('18:30','19:00','s',$type);?>"><?php checkId('18:30','19:00','s',$type);?></td>
+									<td style="border: 1px dotted #000;">6:30-7:00</td>
 								</tr>
 								<tr>
-									<td>7:00-7:30</td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','m',$type);?>"><?php checkId('19:00','19:30','m',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','t',$type);?>"><?php checkId('19:00','19:30','t',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','w',$type);?>"><?php checkId('19:00','19:30','w',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','th',$type);?>"><?php checkId('19:00','19:30','th',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','f',$type);?>"><?php checkId('19:00','19:30','f',$type);?></td>
-									<td style="color: #ffffff; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','s',$type);?>"><?php checkId('19:00','19:30','s',$type);?></td>
-									<td>7:00-7:30</td>
+									<td style="border: 1px dotted #000;">7:00-7:30</td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','m',$type);?>"><?php checkId('19:00','19:30','m',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','t',$type);?>"><?php checkId('19:00','19:30','t',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','w',$type);?>"><?php checkId('19:00','19:30','w',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','th',$type);?>"><?php checkId('19:00','19:30','th',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','f',$type);?>"><?php checkId('19:00','19:30','f',$type);?></td>
+									<td style="color: #000; text-align: left; font-size:  12px; <?php echo checkScheds('19:00','19:30','s',$type);?>"><?php checkId('19:00','19:30','s',$type);?></td>
+									<td style="border: 1px dotted #000;">7:00-7:30</td>
 								</tr>
 							</table>
 
