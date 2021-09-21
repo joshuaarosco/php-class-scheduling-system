@@ -34,20 +34,24 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 				headerToolbar: false,
 				initialDate: '<?php echo date('Y-m-d'); ?>',
 				initialView: 'timeGridWeek',
-				hiddenDays: [ 0, 6 ],
+				hiddenDays: [ 0 ],
 		      navLinks: true, // can click day/week names to navigate views
 		      editable: false,
 		      dayMaxEvents: true, // allow "more" link when too many events
+		      displayEventTime : false,
 		      events: [
 		      <?php while($row = mysqli_fetch_array($query_scheds)){ 
 		      	$start_time =  $row['start_time']?:'00:00';
 		      	$end_time =  $row['end_time']?:'01:00';
 
 		      	$member_id = $row['member_id'];
+		      	$subject_code = $row['subject_code'];
 
 		      	$selectMember = mysqli_query($con,"SELECT * FROM member WHERE member_id = '$member_id' ") or die(mysqli_error($con));
 		      	$member = mysqli_fetch_array($selectMember);
 
+		      	$selectSub = mysqli_query($con,"SELECT * FROM subject WHERE subject_code = '$subject_code' LIMIT 1 ") or die(mysqli_error($con));
+        		$sub = mysqli_fetch_array($selectSub);
 
 		      	$day = 0;
 		      	switch ($row['day']) {
@@ -66,6 +70,9 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 		      		case 'f':
 		      		$day = 5;
 		      		break;
+		      		case 's':
+		      		$day = 6;
+		      		break;
 		      		default:
 		      		$day = 1;
 		      		break;
@@ -75,7 +82,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 
 		      		daysOfWeek: [<?php echo $day;?>],
 		          //groupId: <?php echo $row['room']; ?>,
-		          title: 'Teacher: <?php echo $member['member_first'].' '.$member['member_last']; ?>; Class: <?php echo $row['cys']; ?>; Subject: <?php echo $row['subject_code']; ?>; Room: <?php echo $row['room']; ?>',
+		          title: 'Teacher: <?php echo $member['member_first'].' '.$member['member_last']; ?>; Class: <?php echo $row['cys']; ?>; Subject: <?php echo $row['subject_code']; ?>; Units: <?php echo $sub['subject_units']; ?>; Room: <?php echo $row['room']; ?>',
 		          startTime: '<?php  echo $start_time;?>',
 		          endTime: '<?php  echo $end_time;?>',
 		          url: 'sched_edit.php?id=<?php echo $row['sched_id']?>',
@@ -162,6 +169,9 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 										case 'f':
 										$day = 'Friday';
 										break;
+										case 's':
+										$day = 'Saturday';
+										break;
 
 										default:
 										$day = 'Monday';
@@ -193,6 +203,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 															<option value="w">Wednesday</option>
 															<option value="th">Thursday</option>
 															<option value="f">Friday</option>
+															<option value="s">Saturday</option>
 														</select>
 													</div><!-- /.form group -->
 													<div class="form-group">

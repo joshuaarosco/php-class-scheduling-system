@@ -120,6 +120,9 @@ include('../dist/includes/dbcon.php');
                           case 'f':
                           $day = 'Friday';
                           break;
+                          case 's':
+                          $day = 'Saturday';
+                          break;
 
                           default:
                           $day = 'Monday';

@@ -180,7 +180,9 @@
 .td-div{
 	top: 10px;
 }
-
+.print-header{
+	text-align: center;
+}
 
 /* Switch 1 Specific Styles Start */
 
@@ -226,3 +228,16 @@ input[type="checkbox"].switch_1{
   }
 	
 /* Switch 1 Specific Style End */
+.table-calendar{
+	width: 100%;
+}
+.table-calendar tr td{
+	border: 1px dotted #dddddd;
+	text-align: center;
+	padding: 1px;
+	width: 0%;
+}
+.first-td{
+	width: 2%;
+
+}
