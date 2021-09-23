@@ -441,7 +441,7 @@ $dompdf->render();
 
 $pdf = $dompdf->output();
 
-$dompdf->stream('Schedule-'.$id.'-'.date('Ymd'));
+$dompdf->stream('schedule-'.$id.'-'.date('Ymd'));
 
 $savein = 'uploads/policy_doc/';
 

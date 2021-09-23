@@ -3,6 +3,7 @@ if(empty($_SESSION['id'])):
 	header('Location:../index.php');
 endif;
 include('../dist/includes/dbcon.php');
+$_SESSION['sched_ids'] = [];
 $settings_id = $_SESSION['settings'];
 $type = '';
 $id = '';
@@ -126,7 +127,7 @@ function getInfo($_type, $_id){
 	}
 }
 
-unset($_SESSION["sched_ids"]);
+unset($_SESSION['sched_ids']);
 
 ?>
 <!DOCTYPE html>
@@ -454,7 +455,7 @@ unset($_SESSION["sched_ids"]);
 							</table>
 
 					        <a class="btn btn-flat btn-danger mt-13 mr-10" id="btn-pdf" target="_blank" href="pdf.php?<?php echo $type;?>=<?php echo $id;?>"><span class="glyphicon glyphicon-download-alt mr-10"></span> Download as PDF</a>
-					        <a class="btn btn-flat btn-success mt-13" id="btn-excel" target="_blank" href=""><span class="glyphicon glyphicon-download-alt mr-10"></span> Download as Excel</a>
+					        <a class="btn btn-flat btn-success mt-13" id="btn-excel" href="excel.php?<?php echo $type;?>=<?php echo $id;?>"><span class="glyphicon glyphicon-download-alt mr-10"></span> Download as Excel</a>
 						</div>
 						<div class="col-md-2">
 						</div><!-- /.col (right) -->

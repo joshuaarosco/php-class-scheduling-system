@@ -1,12 +1,7 @@
 <?php
 $con = mysqli_connect("localhost","root","","scheduling");
 
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }else{
-    //echo "successfully connected";
-  }
-?>
+if ($con->connect_error) { 
+  die("Connection failed: " . $con->connect_error); 
+}
 
