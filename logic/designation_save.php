@@ -20,6 +20,7 @@ include('../dist/includes/dbcon.php');
 			{		
 			mysqli_query($con,"INSERT INTO designation(designation_name) 
 				VALUES('$designation')")or die(mysqli_error());
+				$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a designation!&#13;&#10;');
 				echo "<script type='text/javascript'>alert('Successfully added a designation!');</script>";	
 				echo "<script>document.location='../pages/designation.php'</script>";  
 			}	

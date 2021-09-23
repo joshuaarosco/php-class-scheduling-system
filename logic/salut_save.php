@@ -21,6 +21,7 @@ include('../dist/includes/dbcon.php');
 			mysqli_query($con,"INSERT INTO salut(salut) 
 				VALUES('$salut')")or die(mysqli_error());
 				
+				$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a salutation!&#13;&#10;');
 				echo "<script type='text/javascript'>alert('Successfully added a salutation!');</script>";	
 				echo "<script>document.location='../pages/salut.php'</script>";  
 			}

@@ -21,9 +21,10 @@ include('../dist/includes/dbcon.php');
 			{	
 			mysqli_query($con,"INSERT INTO program(prog_code,prog_title) 
 				VALUES('$code','$name')")or die(mysqli_error());
+				$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a program!&#13;&#10;');
+				echo "<script type='text/javascript'>alert('Successfully added a program!');</script>";	
+				echo "<script>document.location='../pages/program.php'</script>";  
 			}	
-			echo "<script type='text/javascript'>alert('Successfully added a program!');</script>";	
-			echo "<script>document.location='../pages/program.php'</script>";  
 	
 }					  
 	

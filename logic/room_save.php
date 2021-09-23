@@ -21,9 +21,11 @@ include('../dist/includes/dbcon.php');
 		
 			mysqli_query($con,"INSERT INTO room(room) 
 				VALUES('$room')")or die(mysqli_error());
-			}			
+
+				$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a room!&#13;&#10;');
 				echo "<script type='text/javascript'>alert('Successfully added a room!');</script>";	
 				echo "<script>document.location='../pages/room.php'</script>";  
+			}			
 	
 }					  
 	

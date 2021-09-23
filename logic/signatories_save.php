@@ -13,7 +13,8 @@ include('../dist/includes/dbcon.php');
 	
 			mysqli_query($con,"INSERT INTO signatories(member_id,seq,set_by) 
 				VALUES('$id','$seq','$mid')")or die(mysqli_error());
-				
+			
+			$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a signatory!&#13;&#10;');
 			echo "<script type='text/javascript'>alert('Successfully added a signatory!');</script>";	
 			echo "<script>document.location='../pages/signatories.php'</script>";  
 	

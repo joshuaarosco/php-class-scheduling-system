@@ -17,6 +17,7 @@ include('../dist/includes/dbcon.php');
 	mysqli_query($con,"update member set member_salut='$salut',member_last='$last',member_first='$first',member_rank='$rank',dept_code='$dept',
 	designation_id='$designation',username='$username',status='$status' where member_id='$id'")or die(mysqli_error());
 	
+	$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfuly updated member!&#13;&#10;');
 	echo "<script type='text/javascript'>alert('Successfully updated member details!');</script>";
 	echo "<script>document.location='../pages/teacher.php'</script>";
 

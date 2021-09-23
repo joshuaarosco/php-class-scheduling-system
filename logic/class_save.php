@@ -18,8 +18,10 @@ include('../dist/includes/dbcon.php');
 			{	
 				mysqli_query($con,"INSERT INTO cys(cys) 
 				VALUES('$cys')")or die(mysqli_error());
-			}	
+				
+				$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a class!&#13;&#10;');
 				echo "<script type='text/javascript'>alert('Successfully added a class!');</script>";	
 				echo "<script>document.location='../pages/class.php'</script>";  
+			}	
 	
 ?>

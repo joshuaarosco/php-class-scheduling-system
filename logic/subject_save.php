@@ -26,6 +26,7 @@ include('../dist/includes/dbcon.php');
 				mysqli_query($con,"INSERT INTO subject(subject_code,subject_title,subject_units,prerequisite,member_id) 
 				VALUES('$code','$title','$units','$prerequisite','$member')")or die(mysqli_error());
 				
+				$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a subject!&#13;&#10;');
 				echo "<script type='text/javascript'>alert('Successfully added a subject!');</script>";	
 				echo "<script>document.location='../pages/subject.php'</script>";  
 			}

@@ -28,10 +28,10 @@ include('../dist/includes/dbcon.php');
 				else{
 					mysqli_query($con,"INSERT INTO member(member_salut,member_last,member_first,member_rank,dept_code,designation_id,username,password,status) 
 					VALUES('$salut','$last','$first','$rank','$dept','$designation','$username','$password','$status')")or die(mysqli_error($con));
-				
-					echo "<script type='text/javascript'>
-				alert('Successfuly added new member');</script>";	
-				echo "<script>document.location='../pages/teacher.php'</script>";  
+					
+					$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfuly added new member!&#13;&#10;');
+					echo "<script type='text/javascript'>alert('Successfuly added new member');</script>";	
+					echo "<script>document.location='../pages/teacher.php'</script>";  
 				}
 				  
 	

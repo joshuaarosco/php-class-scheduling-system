@@ -10,6 +10,7 @@ include('../dist/includes/dbcon.php');
 	$name =$_POST['name'];
 	
 	mysqli_query($con,"update dept set dept_code='$code',dept_name='$name' where dept_id='$id'")or die(mysqli_error());
+	$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully updated a department!&#13;&#10;');
 	echo "<script type='text/javascript'>alert('Successfully updated a department!');</script>";	
 	echo "<script>document.location='../pages/department.php'</script>";  
 }	
