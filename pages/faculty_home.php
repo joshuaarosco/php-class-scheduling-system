@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
 if(empty($_SESSION['id'])):
 	header('Location:../index.php');
 endif;
@@ -100,7 +101,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE member_id = '$me
 						<div class="col-md-6">
 							<span class="section-title"><?php echo date('F d, Y');?></span>
 							<div id="calendar" class="border-1"></div>
-							<button class="btn btn-flat btn-primary mt-13">Print Schedule</button>
+							<a target="_blank" href="print_sched.php?member=<?php echo $member_id;?>" class="btn btn-flat btn-primary mt-13">Print Schedule</a>
 						</div><!-- /.col (right) -->
 						<div class="col-md-3"></div>
 					</div><!-- /.row -->

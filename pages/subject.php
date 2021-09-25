@@ -60,7 +60,6 @@ endif;
                       </tr>
                     </thead>
                     <?php
-                    session_start();
                     $member=$_SESSION['id'];
                     include('../dist/includes/dbcon.php');
                     $query=mysqli_query($con,"select * from subject order by subject_code")or die(mysqli_error());
@@ -136,10 +135,10 @@ endif;
                   <div class="form-group">
                    <span>Update Subject</span><br>
                    <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $_REQUEST['id'];?>">
-                   <input type="text" class="form-control border-1 mt-5" id="code" name="code" value="<?php echo $_REQUEST['code'];?>" placeholder="Subject Code">
-                   <input type="text" class="form-control border-1 mt-13" id="class" name="title" value="<?php echo $_REQUEST['title'];?>" placeholder="Subject Title" required>
-                   <input type="text" class="form-control border-1 mt-5" id="units" name="units" value="<?php echo $_REQUEST['units'];?>" placeholder="Subject units">
-                   <input type="text" class="form-control border-1 mt-13" id="prerequisite" name="prerequisite" value="<?php echo $_REQUEST['prerequisite'];?>" placeholder="Subject prerequisite" required>
+                   <input type="text" class="form-control border-1 mt-5" id="code" name="code" value="<?php !empty($_REQUEST['code'])?$_REQUEST['code']:'';?>" placeholder="Subject Code">
+                   <input type="text" class="form-control border-1 mt-13" id="class" name="title" value="<?php !empty($_REQUEST['title'])?$_REQUEST['title']:'';?>" placeholder="Subject Title" required>
+                   <input type="text" class="form-control border-1 mt-5" id="units" name="units" value="<?php !empty($_REQUEST['units'])?$_REQUEST['units']:'';?>" placeholder="Subject units">
+                   <input type="text" class="form-control border-1 mt-13" id="prerequisite" name="prerequisite" value="<?php !empty($_REQUEST['prerequisite'])?$_REQUEST['prerequisite']:'';?>" placeholder="Subject prerequisite" required>
                  </div><!-- /.form group -->
                </div>
              </div>	
