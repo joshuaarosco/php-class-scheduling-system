@@ -64,27 +64,27 @@ include('../dist/includes/dbcon.php');
                       $set_id = $_SESSION['settings'];
                       $query = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id = '$set_id' ORDER BY start_time")or die(mysqli_error($con));
 
-                      if($_REQUEST['id']){
+                      if(!empty($_REQUEST['id'])){
                         $set_id = $_REQUEST['id'];
                         $query = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id = '$set_id' ORDER BY start_time")or die(mysqli_error($con));
                       }
 
-                      if($_REQUEST['member_id']){
+                      if(!empty($_REQUEST['member_id'])){
                         $mem_id = $_REQUEST['member_id'];
                         $query = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id = '$set_id' AND member_id = '$mem_id' ORDER BY start_time")or die(mysqli_error($con));
                       }
 
-                      if($_REQUEST['class_id']){
+                      if(!empty($_REQUEST['class_id'])){
                         $class_id = $_REQUEST['class_id'];
                         $query = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id = '$set_id' AND cys = '$class_id' ORDER BY start_time")or die(mysqli_error($con));
                       }
 
-                      if($_REQUEST['room_id']){
+                      if(!empty($_REQUEST['room_id'])){
                         $room_id = $_REQUEST['room_id'];
                         $query = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id = '$set_id' AND room = '$room_id' ORDER BY start_time")or die(mysqli_error($con));
                       }
 
-                      if($_REQUEST['subject_code']){
+                      if(!empty($_REQUEST['subject_code'])){
                         $sub_code = $_REQUEST['subject_code'];
                         $query = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id = '$set_id' AND subject_code = '$sub_code' ORDER BY start_time")or die(mysqli_error($con));
                       }
@@ -179,7 +179,7 @@ include('../dist/includes/dbcon.php');
                        <?php 
                        $selMember = mysqli_query($con,"SELECT * FROM member") or die(mysqli_error($con));
                        $member_id = '';
-                       if($_REQUEST['member_id'] != null){
+                       if(!empty($_REQUEST['member_id'])){
                         $member_id = $_REQUEST['member_id'];
                       }
                       ?>
@@ -196,7 +196,7 @@ include('../dist/includes/dbcon.php');
                       <?php 
                       $selCys = mysqli_query($con,"SELECT * FROM cys") or die(mysqli_error($con));
                       $class_id = '';
-                      if($_REQUEST['class_id'] != null){
+                      if(!empty($_REQUEST['class_id'])){
                         $class_id = $_REQUEST['class_id'];
                       }
                       ?>
@@ -213,7 +213,7 @@ include('../dist/includes/dbcon.php');
                       <?php 
                       $selRoom = mysqli_query($con,"SELECT * FROM room") or die(mysqli_error($con));
                       $room_id = '';
-                      if($_REQUEST['room_id'] != null){
+                      if(!empty($_REQUEST['room_id'])){
                         $room_id = $_REQUEST['room_id'];
                       }
                       ?>
@@ -230,7 +230,7 @@ include('../dist/includes/dbcon.php');
                       <?php 
                       $selSubject = mysqli_query($con,"SELECT * FROM subject") or die(mysqli_error($con));
                       $subject_code = '';
-                      if($_REQUEST['subject_code'] != null){
+                      if(!empty($_REQUEST['subject_code'])){
                         $subject_code = $_REQUEST['subject_code'];
                       }
                       ?>
@@ -257,7 +257,7 @@ include('../dist/includes/dbcon.php');
               <?php 
               $selSet = mysqli_query($con,"SELECT * FROM settings") or die(mysqli_error($con));
               $set_id = $_SESSION['settings'];
-              if($_REQUEST['id'] != null){
+              if(!empty($_REQUEST['id'])){
                 $set_id = $_REQUEST['id'];
               }
               ?>
