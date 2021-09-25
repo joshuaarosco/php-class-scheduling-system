@@ -145,7 +145,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 									<?php 
 									$selMember = mysqli_query($con,"SELECT * FROM member") or die(mysqli_error($con));
 									$member_id = '';
-									if($_REQUEST['member_id'] != null){
+									if(!empty($_REQUEST['member_id'])){
 										$member_id = $_REQUEST['member_id'];
 									}
 									?>
@@ -162,7 +162,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 									<?php 
 									$selCys = mysqli_query($con,"SELECT * FROM cys") or die(mysqli_error($con));
 									$class_id = '';
-									if($_REQUEST['class_id'] != null){
+									if(!empty($_REQUEST['class_id'])){
 										$class_id = $_REQUEST['class_id'];
 									}
 									?>
@@ -179,7 +179,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 									<?php 
 									$selRoom = mysqli_query($con,"SELECT * FROM room") or die(mysqli_error($con));
 									$room_id = '';
-									if($_REQUEST['room_id'] != null){
+									if(!empty($_REQUEST['room_id'])){
 										$room_id = $_REQUEST['room_id'];
 									}
 									?>
