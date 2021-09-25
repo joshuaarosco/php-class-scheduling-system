@@ -65,7 +65,7 @@ function checkScheds($_start_time, $_end_time, $_day, $_type){
 	}
 
 	if($counter>0){
-		return 'background: #1b8eff82; border-left: 1px dotted #000; border-right: 1px dotted #000;';
+		return 'border-left: 1px dotted #000; border-right: 1px dotted #000;';
 	}else{
 		return 'border: 1px dotted #000;';
 	}
