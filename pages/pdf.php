@@ -5,8 +5,10 @@ if(empty($_SESSION['id'])):
 endif;
 
 include('../dist/includes/dbcon.php');
-require_once '../dist/dompdf/autoload.inc.php';
+require_once '../dist/dompdf_0-8-3/dompdf/autoload.inc.php';
+unset($_SESSION["sched_ids"]);
 $settings_id = $_SESSION['settings'];
+$_SESSION['sched_ids'][0] = 0;
 $type = '';
 $id = '';
 
@@ -104,7 +106,7 @@ function checkId($_start_time, $_end_time, $_day, $_type)
 		if(($_start_time >= $row['start_time'] AND $_start_time < $row['end_time']) 
 			OR ($_end_time > $row['start_time'] AND $_end_time <= $row['end_time']) 
 			OR ($_start_time < $row['start_time'] AND $_end_time > $row['end_time'])){
-			if(in_array($_SESSION['sched_ids'][$row['sched_id']], $_SESSION['sched_ids'])){
+			if(array_key_exists($row['sched_id'], $_SESSION['sched_ids'] )){
 				//echo 'found';
 			}else{
 				$_SESSION['sched_ids'][$row['sched_id']] = $row['sched_id'];
@@ -143,8 +145,6 @@ function checkType($_type){
 		<span>Room : </span>';
 	}
 }
-
-unset($_SESSION["sched_ids"]);
 
 $settings = mysqli_query($con,"select * from settings where settings_id='$settings_id'")or die(mysqli_error($con));
 $rows = mysqli_fetch_array($settings);

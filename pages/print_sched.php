@@ -3,7 +3,8 @@ if(empty($_SESSION['id'])):
 	header('Location:../index.php');
 endif;
 include('../dist/includes/dbcon.php');
-$_SESSION['sched_ids'] = [];
+unset($_SESSION['sched_ids']);
+$_SESSION['sched_ids'][0] = 0;
 $settings_id = $_SESSION['settings'];
 $type = '';
 $id = '';
@@ -102,7 +103,7 @@ function checkId($_start_time, $_end_time, $_day, $_type)
 		if(($_start_time >= $row['start_time'] AND $_start_time < $row['end_time']) 
 			OR ($_end_time > $row['start_time'] AND $_end_time <= $row['end_time']) 
 			OR ($_start_time < $row['start_time'] AND $_end_time > $row['end_time'])){
-			if(in_array($_SESSION['sched_ids'][$row['sched_id']], $_SESSION['sched_ids'])){
+			if( array_key_exists($row['sched_id'], $_SESSION['sched_ids'] )){
 				//echo 'found';
 			}else{
 				$_SESSION['sched_ids'][$row['sched_id']] = $row['sched_id'];
@@ -126,8 +127,6 @@ function getInfo($_type, $_id){
 		echo $_id;
 	}
 }
-
-unset($_SESSION['sched_ids']);
 
 ?>
 <!DOCTYPE html>
@@ -463,7 +462,8 @@ unset($_SESSION['sched_ids']);
 				</section><!-- /.content -->
 			</div><!-- /.container -->
 		</div><!-- /.content-wrapper -->
-		<?php include('../dist/includes/footer.php');?>
+		<?php
+		include('../dist/includes/footer.php');?>
 	</div><!-- ./wrapper -->
 	<script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
 	<script src="../dist/js/jquery.min.js"></script>

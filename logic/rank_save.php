@@ -9,17 +9,14 @@ include('../dist/includes/dbcon.php');
 
 	$rank = $_POST['rank'];		
 
-			$query=mysqli_query($con,"select * from rank where rank='$rank'")or die(mysqli_error());
+			$query=mysqli_query($con,"select * from rank where rank='$rank'")or die(mysqli_error($con));
 			$count=mysqli_num_rows($query);		
-			if ($count>0)
-			{
+			if ($count>0){
 				echo "<script type='text/javascript'>alert('Rank already added!');</script>";	
 				echo "<script>document.location='../pages/rank.php'</script>";  
 			}	
-			else
-			{	
-			mysqli_query($con,"INSERT INTO rank(rank) 
-				VALUES('$rank')")or die(mysqli_error());
+			else{	
+				mysqli_query($con,"INSERT INTO scheduling.rank(rank) VALUES('$rank')")or die(mysqli_error($con));
 				
 				$_SESSION['logs'] = nl2br( $_SESSION['logs'].date('h:i:s').'_Successfully added a rank!&#13;&#10;');
 				echo "<script type='text/javascript'>alert('Successfully added a rank!');</script>";	
