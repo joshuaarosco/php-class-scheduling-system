@@ -48,7 +48,7 @@ error_reporting(0);
               <table class="w-100 custom-table" style="margin-right:-10px">
                 <thead>
                   <tr>
-                    <th>Term</th>
+                    <!-- <th>Term</th> -->
                     <th>Semester</th>
                     <th>School Year</th>
                     <th>Status</th>
@@ -69,7 +69,7 @@ error_reporting(0);
 
                   ?>
                   <tr>
-                    <td><?php echo $term;?></td>
+                    <!-- <td><?php echo $term;?></td> -->
                     <td><?php echo $sem;?></td>
                     <td><?php echo $sy;?></td>  
                     <td><?php echo ucwords($status);?></td>   
@@ -122,19 +122,17 @@ error_reporting(0);
                            </div><!-- /.form group -->
                          </div>
                        </div>	
-                       <div class="form-group">
-                        <div class="row">
-                          <div class="col-xs-6 pr-0">
-                            <button class="btn btn-block btn-primary btn-flat" name="save" type="submit">Save</button>
-                          </div>
-                          <div class="col-xs-6">
-                            <button class="btn btn-block btn-flat" type="reset">Cancel</button>
-                          </div>
+                       <div class="row">
+                         <div class="col-xs-6 pr-0">
+                          <button class="btn btn-block btn-primary btn-flat" name="save" type="submit">Save</button>
+                        </div>
+                        <div class="col-xs-6">
+                          <button class="btn btn-block btn-flat" type="reset">Cancel</button>
                         </div>
                       </div>
                     </div><!-- /.form group -->
                   </form>  
-                  <form method="post" action="term.php">
+                  <!--<form method="post" action="term.php">
                     <span class="section-title">Set Term</span>
                     <div class="form-group">
                       <span for="date">Term</span>
@@ -142,7 +140,7 @@ error_reporting(0);
                         <option>Midterm</option>
                         <option>Endterm</option>
                       </select>
-                    </div><!-- /.form group -->
+                    </div>/.form group
                     <div class="row">
                       <div class="col-xs-6 pr-0">
                         <button class="btn btn-block btn-primary btn-flat" name="save" type="submit">Save</button>
@@ -151,7 +149,7 @@ error_reporting(0);
                         <button class="btn btn-block btn-flat" type="reset">Cancel</button>
                       </div>
                     </div>
-                  </form>
+                  </form>-->
                 </div>
               </div><!-- /.box-body -->
             </div><!-- /.box -->
