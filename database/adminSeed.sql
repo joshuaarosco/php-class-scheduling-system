@@ -1,0 +1,2 @@
+insert  into `member`(`member_id`,`member_last`,`member_first`,`member_rank`,`member_salut`,`dept_code`,`designation_id`,`program_code`,`username`,`password`,`status`) values 
+(27,'Admin','Admin','Assistant Professor I','Mrs','CIT',5,'','admin','admin','admin');

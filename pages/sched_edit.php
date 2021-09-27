@@ -3,7 +3,8 @@ if(empty($_SESSION['id'])):
 	header('Location:../index.php');
 endif;
 include('../dist/includes/dbcon.php');
-$query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error($con));
+$settings_id = $_SESSION['settings'];
+$query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$settings_id'") or die(mysqli_error($con));
 ?>
 <!DOCTYPE html>
 <html>
@@ -220,14 +221,17 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule") or die(mysqli_error(
 														</select>
 													</div><!-- /.form group -->
 													<div class="form-group">
-														<span class="ml-5">Subject</span>
+														<span class="ml-5">Subject Code & Subject Title</span>
+														<?php $query3 = mysqli_query($con,"select * from subject where subject_code = '".$row['subject_code']."'")or die(mysqli_error($con));
+															$row3=mysqli_fetch_array($query3);
+														?>
 														<select class="form-control input" name="subject" required>
-															<option value="<?php echo $row['subject_code'];?>"><?php echo $row['subject_code'];?></option>
+															<option value="<?php echo $row['subject_code'];?>"><?php echo $row['subject_code'].' - '.$row3['subject_title'];?></option>
 															<?php 
 															$query2=mysqli_query($con,"select * from subject order by subject_code")or die(mysqli_error($con));
 															while($row2=mysqli_fetch_array($query2)){
 																?>
-																<option><?php echo $row2['subject_code'];?></option>
+																<option><?php echo $row2['subject_code'].' - '.$row2['subject_title'];?></option>
 															<?php }
 
 															?>

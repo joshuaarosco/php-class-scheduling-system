@@ -260,16 +260,16 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 															?>
 														</select>
 													</div><!-- /.form group -->
-													<span class="ml-5">Add Subject</span>
+													<span class="ml-5">Add Subject Code & Subject Title</span>
 													<div class="form-group has-feedback">
 														<span class="glyphicon glyphicon-plus form-control-feedback float-left left-0"></span>
 														<select class="form-control input-has-feedback input" name="subject" required>
-															<option value="">Choose a Subject</option>
+															<option value="">Choose a Subject Code & Subject Title</option>
 															<?php 
 															$query2=mysqli_query($con,"select * from subject order by subject_code")or die(mysqli_error($con));
 															while($row=mysqli_fetch_array($query2)){
 																?>
-																<option><?php echo $row['subject_code'];?></option>
+																<option><?php echo $row['subject_code'].' - '.$row['subject_title'];?></option>
 															<?php }
 															?>
 														</select>
