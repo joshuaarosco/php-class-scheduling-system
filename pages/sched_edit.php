@@ -231,7 +231,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 															$query2=mysqli_query($con,"select * from subject order by subject_code")or die(mysqli_error($con));
 															while($row2=mysqli_fetch_array($query2)){
 																?>
-																<option><?php echo $row2['subject_code'].' - '.$row2['subject_title'];?></option>
+																<option value="<?php echo $row2['subject_code'];?>"><?php echo $row2['subject_code'].' - '.$row2['subject_title'];?></option>
 															<?php }
 
 															?>
@@ -245,7 +245,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 															$query2=mysqli_query($con,"select * from cys order by cys")or die(mysqli_error($con));
 															while($row2=mysqli_fetch_array($query2)){
 																?>
-																<option><?php echo $row2['cys'];?></option>
+																<option value="<?php echo $row2['cys'];?>"><?php echo $row2['cys'];?></option>
 															<?php }
 															?>
 														</select>	
@@ -258,7 +258,7 @@ $query_scheds = mysqli_query($con,"SELECT * FROM schedule WHERE settings_id='$se
 															$query2=mysqli_query($con,"select * from room order by room")or die(mysqli_error($con));
 															while($row2=mysqli_fetch_array($query2)){
 																?>
-																<option><?php echo $row2['room'];?></option>
+																<option value="<?php echo $row2['room'];?>"><?php echo $row2['room'];?></option>
 															<?php }
 															?>
 														</select>	
