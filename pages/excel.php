@@ -70,7 +70,7 @@ function checkId($_start_time, $_end_time, $_day, $_type)
 				//echo 'found';
 			}else{
 				$_SESSION['sched_ids'][$row['sched_id']] = $row['sched_id'];
-				return 'Teacher: '.$member['member_first'].' '.$member['member_last'].'; Class: '.$row['cys'].'; Subject: '.$row['subject_code'].'; Units: '.$sub['subject_units'].'; Room: '.$row['room'];
+				return 'Teacher: '.$member['member_first'].' '.$member['member_last'].'; Class: '.$row['cys'].'; Subject: '.$row['subject_code'].' - '.$sub['subject_title'].'; Units: '.$sub['subject_units'].'; Room: '.$row['room'];
 			}
 		}
 	}

@@ -110,7 +110,7 @@ function checkId($_start_time, $_end_time, $_day, $_type)
 				//echo 'found';
 			}else{
 				$_SESSION['sched_ids'][$row['sched_id']] = $row['sched_id'];
-				return '<div style="max-height: 10px; height: 10px; overflow: visible; z-index: 1000px;">Teacher: <strong>'.$member['member_first'].' '.$member['member_last'].'</strong>; Class: <strong>'.$row['cys'].'</strong>; Subject: <strong>'.$row['subject_code'].'</strong>; Units: <strong>'.$sub['subject_units'].'</strong>; Room: <strong>'.$row['room'].'</strong></div>';
+				return '<div style="max-height: 10px; height: 10px; overflow: visible; z-index: 1000px;">Teacher: <strong>'.$member['member_first'].' '.$member['member_last'].'</strong>; Class: <strong>'.$row['cys'].'</strong>; Subject: <strong>'.$row['subject_code'].' - '.$sub['subject_title'].'</strong>; Units: <strong>'.$sub['subject_units'].'</strong>; Room: <strong>'.$row['room'].'</strong></div>';
 			}
 		}
 	}

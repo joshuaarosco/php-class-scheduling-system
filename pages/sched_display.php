@@ -252,8 +252,8 @@ include('../dist/includes/dbcon.php');
           </div><!-- /.box -->
           <div class="box border-1">
             <div class="box-body">
-              <h4>Term, Semester & School Year</h4>
-              <span>This field will show the schedules from the previous Term, Semester & School Year.</span><br/><br/>
+              <h4>Semester & School Year</h4>
+              <span>This field will show the schedules from the previous Semester & School Year.</span><br/><br/>
               <?php 
               $selSet = mysqli_query($con,"SELECT * FROM settings") or die(mysqli_error($con));
               $set_id = $_SESSION['settings'];
@@ -265,7 +265,7 @@ include('../dist/includes/dbcon.php');
                 <?php
                 while($set = mysqli_fetch_array($selSet)){?>
                   <option value="<?php echo $set['settings_id'];?>"  <?php echo $set['settings_id'] == $set_id? 'selected':''; ?>>
-                    <?php echo $set['term'];?>, <?php echo $set['sem'];?> & <?php echo $set['sy'];?>
+                    <!-- <?php echo $set['term'];?> --> <?php echo $set['sem'];?> & <?php echo $set['sy'];?>
                   </option>
                 <?php }?>
               </select>
